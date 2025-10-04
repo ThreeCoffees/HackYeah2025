@@ -6,5 +6,5 @@
 script = ExtResource("1_itl3e")
 
 [node name="PickingRayCast" type="RayCast3D" parent="."]
-target_position = Vector3(0, 0, -1)
+target_position = Vector3(0, 0, -30)
 collide_with_areas = true

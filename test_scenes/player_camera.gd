@@ -2,7 +2,7 @@ extends Camera3D
 
 const mouse_sensitivity = 0.003;
 
-signal picking_ray_cast;
+@onready var picking_ray = $PickingRayCast;
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
@@ -13,5 +13,12 @@ func _unhandled_input(event):
 		get_parent().rotate_y(-event.relative.x * mouse_sensitivity);
 		rotate_x(-event.relative.y * mouse_sensitivity);
 		rotation.x = clampf(rotation.x, -deg_to_rad(70), deg_to_rad(70));
-	if event is InputEventMouseButton and event.is_action_pressed("pick"):
-		picking_ray_cast.emit();
+
+
+func _process(delta: float):
+	if Input.is_action_just_pressed("pick"):
+		var picked_object = picking_ray.get_collider();
+		if not is_instance_valid(picked_object):
+			return
+		if picked_object.has_method("_on_pick_input"):
+			picked_object._on_pick_input();
