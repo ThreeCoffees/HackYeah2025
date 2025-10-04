@@ -90,6 +90,7 @@ skeleton = NodePath("../MeshInstance3D3")
 surface_material_override/0 = SubResource("StandardMaterial3D_nl7uf")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="transparentwall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11532402, -0.021795273, -0.037878036)
 mesh = SubResource("BoxMesh_txxle")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_txxle")
