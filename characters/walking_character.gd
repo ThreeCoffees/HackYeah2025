@@ -4,12 +4,16 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-const mouse_sensitivity = 0.001
+const mouse_sensitivity = 0.003
+
+@export var is_player = false;
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
 
 func _input(event):
+	if not is_player:
+		return;
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity);
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity);
@@ -19,6 +23,9 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	if not is_player:
+		return
 
 	# Handle jump.
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
