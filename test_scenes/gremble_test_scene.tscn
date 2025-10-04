@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=3 uid="uid://baard4kloe547"]
 
-[ext_resource type="PackedScene" uid="uid://dk3bqkf2rry5l" path="res://test_scenes/movable_wall.tscn" id="1_cirfm"]
+[ext_resource type="PackedScene" uid="uid://dk3bqkf2rry5l" path="res://walls/movable_wall.tscn" id="1_cirfm"]
 [ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="2_dh7q0"]
-[ext_resource type="PackedScene" uid="uid://clpfc8q3dpry7" path="res://test_scenes/button.tscn" id="3_6eh5t"]
+[ext_resource type="PackedScene" uid="uid://clpfc8q3dpry7" path="res://activators/button.tscn" id="3_6eh5t"]
 [ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="3_okhc2"]
-[ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://test_scenes/global_state_button.tscn" id="5_fenjg"]
-[ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://test_scenes/waterfall.tscn" id="6_xmw63"]
-[ext_resource type="PackedScene" uid="uid://biv5d65umpjqc" path="res://test_scenes/light_wall.tscn" id="7_2tu86"]
+[ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://activators/global_state_button.tscn" id="5_fenjg"]
+[ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://walls/waterfall.tscn" id="6_xmw63"]
+[ext_resource type="PackedScene" uid="uid://biv5d65umpjqc" path="res://walls/light_wall.tscn" id="7_2tu86"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dh7q0"]
 size = Vector3(20, 1, 20)
@@ -263,6 +263,9 @@ spot_angle = 16.34
 
 [node name="LightWall" parent="." instance=ExtResource("7_2tu86")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.0679626, 0, 2.729823)
+
+[node name="WalkingCharacter2" parent="." instance=ExtResource("2_dh7q0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5272045, 0.4386816, 2.9120748)
 
 [connection signal="body_entered" from="Area3D" to="MovableWall" method="toggle_active_if_player"]
 [connection signal="pressed" from="Button" to="MovableWall" method="toggle_active"]

@@ -4,7 +4,6 @@
 
 [node name="PlayableCharacter" type="CharacterBody3D"]
 collision_layer = 7
-collision_mask = 3
 script = ExtResource("1_cne60")
 
 [node name="CameraOffset" type="Node3D" parent="."]

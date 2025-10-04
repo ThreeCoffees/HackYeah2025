@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dy7dd3ej6xisk"]
 
-[ext_resource type="Script" uid="uid://d1dg4k5icl05o" path="res://scripts/global_state_button.gd" id="1_3jct1"]
-[ext_resource type="Script" uid="uid://b5f5uscou4ji4" path="res://test_scenes/global_test_scene_area.gd" id="2_irn3s"]
+[ext_resource type="Script" uid="uid://d1dg4k5icl05o" path="res://activators/global_state_button.gd" id="1_3jct1"]
+[ext_resource type="Script" uid="uid://b5f5uscou4ji4" path="res://activators/global_test_scene_area.gd" id="2_irn3s"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3jct1"]
 bottom_radius = 0.3

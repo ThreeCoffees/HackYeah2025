@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://clpfc8q3dpry7"]
 
-[ext_resource type="Script" uid="uid://df0bhf3e2yee7" path="res://test_scenes/button.gd" id="1_ookdw"]
+[ext_resource type="Script" uid="uid://df0bhf3e2yee7" path="res://activators/button.gd" id="1_ookdw"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pynka"]
 height = 0.25
@@ -12,6 +12,8 @@ height = 0.25
 script = ExtResource("1_ookdw")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 7
+collision_mask = 0
 script = ExtResource("1_ookdw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
