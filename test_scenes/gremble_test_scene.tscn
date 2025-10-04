@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://baard4kloe547"]
+[gd_scene load_steps=15 format=3 uid="uid://baard4kloe547"]
 
 [ext_resource type="PackedScene" uid="uid://dk3bqkf2rry5l" path="res://test_scenes/movable_wall.tscn" id="1_cirfm"]
 [ext_resource type="PackedScene" uid="uid://x8ncv8cvkmg5" path="res://characters/walking_character.tscn" id="2_dh7q0"]
 [ext_resource type="PackedScene" uid="uid://clpfc8q3dpry7" path="res://test_scenes/button.tscn" id="3_6eh5t"]
 [ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="3_okhc2"]
+[ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://test_scenes/global_state_button.tscn" id="5_fenjg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dh7q0"]
 size = Vector3(20, 1, 20)
@@ -227,6 +228,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.912654, -5.1567426)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2051005)
 shape = SubResource("BoxShape3D_fenjg")
+
+[node name="GlobalStateButton" parent="." instance=ExtResource("5_fenjg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5784683, 0, 5.4654055)
+action = "disable"
 
 [connection signal="body_entered" from="Area3D" to="MovableWall" method="toggle_active_if_player"]
 [connection signal="pressed" from="Button" to="MovableWall" method="toggle_active"]
