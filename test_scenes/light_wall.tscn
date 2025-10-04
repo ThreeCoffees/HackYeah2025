@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://biv5d65umpjqc"]
+
+[ext_resource type="Script" uid="uid://bghj7fa02xkws" path="res://test_scenes/light_wall.gd" id="1_l7w70"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l7w70"]
+size = Vector3(2, 0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vuo5y"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vuo5y"]
+top_radius = 0.9
+bottom_radius = 1.5
+height = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7w70"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.67222893, 0.1671899, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l7w70"]
+size = Vector3(2.6428223, 2.6675415, 0.3128662)
+
+[node name="LightWall" type="Node3D"]
+script = ExtResource("1_l7w70")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+mesh = SubResource("BoxMesh_l7w70")
+surface_material_override/0 = SubResource("StandardMaterial3D_vuo5y")
+
+[node name="Light" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 1.5, 0)
+mesh = SubResource("CylinderMesh_vuo5y")
+surface_material_override/0 = SubResource("StandardMaterial3D_l7w70")
+
+[node name="Collider" type="StaticBody3D" parent="."]
+collision_layer = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04284668, 1.450531, -0.0016479492)
+shape = SubResource("BoxShape3D_l7w70")
+disabled = true

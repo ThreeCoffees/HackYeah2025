@@ -58,7 +58,6 @@ func enable_disable_collisions() -> void:
 		$Collider/CollisionShape3D.set_deferred("disabled", true)
 
 func _process(delta: float) -> void:
-	pass
 	gravitate(delta)
 	position_mesh()
 	enable_disable_collisions()
