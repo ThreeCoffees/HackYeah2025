@@ -1,12 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://b8bq1fncgd3gn"]
 
+[ext_resource type="PackedScene" uid="uid://dsqmdc5xdd8ke" path="res://walls/static_wall.tscn" id="1_txxle"]
 [ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="2_pv81j"]
 [ext_resource type="PackedScene" uid="uid://bto115mhdyubd" path="res://characters/flying_character.tscn" id="3_uagcx"]
 [ext_resource type="PackedScene" uid="uid://dwilk1ike3iry" path="res://characters/walking_character_small.tscn" id="4_nl7uf"]
 [ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="5_txxle"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_nl7uf"]
-size = Vector3(20, 1, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rw8bm"]
 size = Vector3(20, 1, 20)
@@ -26,17 +24,8 @@ emission = Color(1, 1, 1, 1)
 
 [node name="leon_test_scene" type="Node3D"]
 
-[node name="StaticWall" type="StaticBody3D" parent="."]
+[node name="StaticWall" parent="." instance=ExtResource("1_txxle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-collision_layer = 3
-collision_mask = 0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticWall"]
-mesh = SubResource("BoxMesh_nl7uf")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticWall"]
-shape = SubResource("BoxShape3D_rw8bm")
 
 [node name="FlyingCharacter" parent="." instance=ExtResource("3_uagcx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.697995, 3.5570292, 0)
