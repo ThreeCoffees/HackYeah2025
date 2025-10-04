@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://baard4kloe547"]
+[gd_scene load_steps=16 format=3 uid="uid://baard4kloe547"]
 
 [ext_resource type="PackedScene" uid="uid://dk3bqkf2rry5l" path="res://test_scenes/movable_wall.tscn" id="1_cirfm"]
 [ext_resource type="PackedScene" uid="uid://x8ncv8cvkmg5" path="res://characters/walking_character.tscn" id="2_dh7q0"]
 [ext_resource type="PackedScene" uid="uid://clpfc8q3dpry7" path="res://test_scenes/button.tscn" id="3_6eh5t"]
 [ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="3_okhc2"]
+[ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://test_scenes/global_state_button.tscn" id="5_fenjg"]
+[ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://test_scenes/waterfall.tscn" id="6_xmw63"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dh7q0"]
 size = Vector3(20, 1, 20)
@@ -152,14 +154,14 @@ shape = SubResource("BoxShape3D_6eh5t")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.9890161, -0.0024653208, 0.14778611, -0.033027444, 0.9708936, 0.23722284, -0.14406952, -0.23949824, 0.9601482, 0, 6.682555, 9.388758)
-light_color = Color(0.97, 0, 0, 1)
+light_color = Color(0.96862745, 0.10980392, 0.08235294, 1)
 light_energy = 0.47
 shadow_enabled = true
 sky_mode = 1
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.31540972, -0.23534834, 0.9193088, -0.033027455, 0.97089374, 0.23722288, -0.9483805, 0.044459946, -0.31400204, 0, 6.682555, 9.388758)
-light_color = Color(0.97, 0, 0, 1)
+light_color = Color(0.96862745, 0.24313726, 0.25490198, 1)
 light_energy = 0.325
 shadow_enabled = true
 sky_mode = 1
@@ -227,6 +229,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.912654, -5.1567426)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2051005)
 shape = SubResource("BoxShape3D_fenjg")
+
+[node name="GlobalStateButton" parent="." instance=ExtResource("5_fenjg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5784683, 0, 5.4654055)
+action = "disable"
+
+[node name="GlobalStateButton2" parent="." instance=ExtResource("5_fenjg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5415163, -4.7683716e-07, 6.8037143)
+
+[node name="Waterfall" parent="." instance=ExtResource("6_xmw63")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13.640975, 0, 6.9009876)
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -12.7467165, 3.6805854, 4.0827923)
+light_energy = 16.0
+light_volumetric_fog_energy = 4.179
+spot_range = 4.045
+spot_attenuation = -2.63
+spot_angle = 16.34
 
 [connection signal="body_entered" from="Area3D" to="MovableWall" method="toggle_active_if_player"]
 [connection signal="pressed" from="Button" to="MovableWall" method="toggle_active"]
