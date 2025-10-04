@@ -1,0 +1,24 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwh5ch0dfk7nl"]
+
+[ext_resource type="Script" uid="uid://dceunjbyu521y" path="res://scripts/audio_manager.gd" id="1_gs1iy"]
+[ext_resource type="AudioStream" uid="uid://1yrrf4xlphk6" path="res://audio/flick1.mp3" id="2_k2j73"]
+[ext_resource type="AudioStream" uid="uid://5ggyb1y7tqwd" path="res://audio/flick2.mp3" id="3_updf0"]
+[ext_resource type="AudioStream" uid="uid://coe6ddbmtdolu" path="res://audio/flick3.mp3" id="4_ygcpw"]
+[ext_resource type="AudioStream" uid="uid://cxwxfjutebwfc" path="res://audio/flick4.mp3" id="5_vu5qj"]
+[ext_resource type="AudioStream" uid="uid://boj51gyddgfao" path="res://audio/flick5.mp3" id="6_aegvw"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_64kr0"]
+random_pitch = 1.1
+random_volume_offset_db = 3.0
+streams_count = 5
+stream_0/stream = ExtResource("2_k2j73")
+stream_1/stream = ExtResource("3_updf0")
+stream_2/stream = ExtResource("4_ygcpw")
+stream_3/stream = ExtResource("5_vu5qj")
+stream_4/stream = ExtResource("6_aegvw")
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_gs1iy")
+
+[node name="flick" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_64kr0")

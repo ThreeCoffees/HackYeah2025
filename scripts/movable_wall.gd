@@ -9,7 +9,7 @@ extends Node3D
 @export var is_active: bool = false
 var t: float = 0
 
-func _enter_tree() -> void:
+func _ready() -> void:
 	if is_active:
 		t = 1
 		actual_wall.global_position = active_position.global_position
@@ -50,7 +50,7 @@ func set_active_val(new_acitve: bool) -> void:
 func toggle_active() -> void:
 	is_active = not is_active
 	
-func toggle_active_dummy_arg(ignored_arg) -> void:
+func toggle_active_dummy_arg(_ignored_arg) -> void:
 	is_active = not is_active
 	
 func toggle_active_if_player(body: Node3D) -> void:
@@ -61,4 +61,8 @@ func set_active() -> void:
 	is_active = true
 	
 func set_inactive() -> void:
-	is_active = true
+	is_active = false
+	
+func set_inactive_if_player(body: Node3D) -> void:
+	if body is WalkingCharacter:
+		is_active = false
