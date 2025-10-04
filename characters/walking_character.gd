@@ -4,6 +4,9 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+func _ready():
+	self.input_event.connect(_on_input_event);
+
 func is_player():
 	return is_instance_valid(get_node_or_null("PlayerCamera"));
 
@@ -38,3 +41,7 @@ func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, n
 	print(event);
 	if event is InputEventMouseButton:
 		print("pressed");
+
+
+func _on_player_camera_picking_ray_cast() -> void:
+	print("pressed");

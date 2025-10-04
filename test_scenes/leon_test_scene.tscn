@@ -29,4 +29,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6304364, -0.5267069)
 [node name="WalkingCharacter2" parent="." instance=ExtResource("1_rw8bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.468672)
 
-[connection signal="input_event" from="WalkingCharacter2" to="WalkingCharacter2" method="_on_input_event"]
+[connection signal="picking_ray_cast" from="WalkingCharacter/PlayerCamera" to="WalkingCharacter2" method="_on_player_camera_picking_ray_cast"]
