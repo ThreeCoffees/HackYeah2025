@@ -3,4 +3,9 @@
 [ext_resource type="Script" uid="uid://ba7rvi6gf7o0r" path="res://characters/playable_character.gd" id="1_cne60"]
 
 [node name="PlayableCharacter" type="CharacterBody3D"]
+collision_layer = 7
+collision_mask = 3
 script = ExtResource("1_cne60")
+
+[node name="CameraOffset" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4439663, -0.593572)
