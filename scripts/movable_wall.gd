@@ -9,7 +9,7 @@ extends Node3D
 @export var is_active: bool = false
 var t: float = 0
 
-func _enter_tree() -> void:
+func _ready() -> void:
 	if is_active:
 		t = 1
 		actual_wall.global_position = active_position.global_position
