@@ -17,3 +17,6 @@ shape = SubResource("CylinderShape3D_xidai")
 [node name="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_aqfx2")
+
+[node name="CameraOffset" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5951905)

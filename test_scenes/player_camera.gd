@@ -13,6 +13,7 @@ func _ready():
 		print("only one player camera allowed");
 	instance = self;
 
+
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		get_parent().rotate_y(-event.relative.x * mouse_sensitivity);
