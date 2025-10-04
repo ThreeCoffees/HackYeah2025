@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk3bqkf2rry5l"]
 
-[ext_resource type="Script" uid="uid://ch0qojfc5qsuo" path="res://scripts/movable_wall.gd" id="1_q62et"]
+[ext_resource type="Script" uid="uid://ch0qojfc5qsuo" path="res://walls/movable_wall.gd" id="1_jjxx7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q62et"]
 size = Vector3(3, 3, 0.15)
@@ -13,7 +13,7 @@ material = SubResource("StandardMaterial3D_q62et")
 size = Vector3(3, 3, 0.15)
 
 [node name="MovableWall" type="Node3D" node_paths=PackedStringArray("actual_wall", "active_position", "passive_position")]
-script = ExtResource("1_q62et")
+script = ExtResource("1_jjxx7")
 actual_wall = NodePath("AnimatableBody3D")
 active_position = NodePath("ActivePosition")
 passive_position = NodePath("PassivePosition")
