@@ -40,6 +40,8 @@ func position_mesh() -> void:
 		
 		$WaterfallMeshBase.position.y = new_base_pos
 		$WaterfallMeshBase.scale.y = new_scale
+		
+		(($WaterfallMeshBase/WaterfallMesh.mesh as BoxMesh).material as ShaderMaterial).set_shader_parameter("mesh_height", natural_mesh_height * new_scale);
 	else:
 		$WaterfallMeshBase.visible = false
 
