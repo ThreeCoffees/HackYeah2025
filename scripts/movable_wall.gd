@@ -47,6 +47,9 @@ func _physics_process(delta: float) -> void:
 func set_active_val(new_acitve: bool) -> void:
 	is_active = new_acitve
 	
+func toggle_active() -> void:
+	is_active = not is_active
+	
 func set_active() -> void:
 	is_active = true
 	
