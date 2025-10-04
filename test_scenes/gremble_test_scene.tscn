@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://baard4kloe547"]
+
+[ext_resource type="PackedScene" uid="uid://dk3bqkf2rry5l" path="res://test_scenes/movable_wall.tscn" id="1_cirfm"]
+
+[node name="Scene" type="Node3D"]
+
+[node name="MovableWall" parent="." instance=ExtResource("1_cirfm")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6690874, 4.581652)
