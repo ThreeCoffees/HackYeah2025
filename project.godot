@@ -76,3 +76,7 @@ jump={
 3d_physics/layer_1="BlockingMovement"
 3d_physics/layer_2="BlockingInterations"
 3d_physics/layer_3="Interactible"
+
+[physics]
+
+3d/default_gravity=30.0

@@ -1,6 +1,6 @@
 extends Node
 
-var current = "rain"
+var current = "sun"
 
 signal rain_started;
 signal rain_stopped;

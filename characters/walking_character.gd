@@ -2,7 +2,7 @@ extends PlayableCharacter
 class_name WalkingCharacter
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 10.0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
