@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://baard4kloe547"]
 
 [ext_resource type="PackedScene" uid="uid://dk3bqkf2rry5l" path="res://test_scenes/movable_wall.tscn" id="1_cirfm"]
-[ext_resource type="PackedScene" uid="uid://x8ncv8cvkmg5" path="res://characters/walking_character.tscn" id="2_dh7q0"]
+[ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="2_dh7q0"]
 [ext_resource type="PackedScene" uid="uid://clpfc8q3dpry7" path="res://test_scenes/button.tscn" id="3_6eh5t"]
 [ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="3_okhc2"]
 [ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://test_scenes/global_state_button.tscn" id="5_fenjg"]
@@ -50,7 +50,7 @@ move_speed = 3.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09956217, 0.5702574, 5.5611873)
 
 [node name="PlayerCamera" parent="WalkingCharacter" instance=ExtResource("3_okhc2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5209637, -0.3111372)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.587425, -0.34698296)
 
 [node name="StaticWall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, 0)
