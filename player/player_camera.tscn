@@ -1,10 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://dsbnm1yue8ama"]
 
-[ext_resource type="Script" uid="uid://qmiw0wbij67f" path="res://test_scenes/player_camera.gd" id="1_itl3e"]
+[ext_resource type="Script" uid="uid://qmiw0wbij67f" path="res://player/player_camera.gd" id="1_itl3e"]
 
 [node name="PlayerCamera" type="Camera3D"]
 script = ExtResource("1_itl3e")
 
 [node name="PickingRayCast" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -30)
+collision_mask = 6
 collide_with_areas = true

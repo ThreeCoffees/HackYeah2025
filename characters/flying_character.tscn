@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bto115mhdyubd"]
+
+[ext_resource type="PackedScene" uid="uid://b4xmcokbmqma" path="res://characters/playable_character.tscn" id="1_6kj3i"]
+[ext_resource type="Script" uid="uid://bshf6r3q7oj2k" path="res://characters/flying_character.gd" id="2_evaoo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_evaoo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_58oc1"]
+
+[node name="FlyingCharacter" instance=ExtResource("1_6kj3i")]
+script = ExtResource("2_evaoo")
+
+[node name="CameraOffset" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5810886)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("SphereShape3D_evaoo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+mesh = SubResource("SphereMesh_58oc1")
