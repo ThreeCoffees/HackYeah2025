@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://baard4kloe547"]
+[gd_scene load_steps=15 format=3 uid="uid://baard4kloe547"]
 
 [ext_resource type="PackedScene" uid="uid://dk3bqkf2rry5l" path="res://walls/movable_wall.tscn" id="1_cirfm"]
 [ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="2_dh7q0"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://activators/global_state_button.tscn" id="5_fenjg"]
 [ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://walls/waterfall.tscn" id="6_xmw63"]
 [ext_resource type="PackedScene" uid="uid://biv5d65umpjqc" path="res://walls/light_wall.tscn" id="7_2tu86"]
+[ext_resource type="PackedScene" uid="uid://bs13iny0bo11u" path="res://activators/pressure_plate.tscn" id="8_uqfou"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dh7q0"]
 size = Vector3(20, 1, 20)
@@ -14,22 +15,12 @@ size = Vector3(20, 1, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6eh5t"]
 size = Vector3(20, 1, 20)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dh7q0"]
-albedo_color = Color(0.427493, 0.42749307, 0.42749307, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_6eh5t"]
-material = SubResource("StandardMaterial3D_dh7q0")
-size = Vector3(1, 0.2, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6eh5t"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_okhc2"]
 material = SubResource("StandardMaterial3D_6eh5t")
 size = Vector3(0.1, 0.1, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_okhc2"]
-size = Vector3(0.5275879, 1, 0.5116577)
 
 [sub_resource type="Environment" id="Environment_6eh5t"]
 background_mode = 1
@@ -179,10 +170,6 @@ light_energy = 0.325
 shadow_enabled = true
 sky_mode = 1
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5082479, -9.536743e-07, 4.143104)
-mesh = SubResource("BoxMesh_6eh5t")
-
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.837433, 2.5082479, -9.536743e-07, 2.1426113)
 mesh = SubResource("BoxMesh_okhc2")
@@ -194,13 +181,6 @@ mesh = SubResource("BoxMesh_okhc2")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1.7744149, 0, 1, 0, -1, 0, -7.7562134e-08, -3.2530727, 2.0404313, 0.5300858)
 mesh = SubResource("BoxMesh_okhc2")
-
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.795631, 4.7683716e-07, 3.9332037)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28719568, 0.14658129, 0.17596793)
-shape = SubResource("BoxShape3D_okhc2")
 
 [node name="Button" parent="." instance=ExtResource("3_6eh5t")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -5.281409, 2.125, 0.60712814)
@@ -267,6 +247,10 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.06
 [node name="WalkingCharacter2" parent="." instance=ExtResource("2_dh7q0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5272045, 0.4386816, 2.9120748)
 
-[connection signal="body_entered" from="Area3D" to="MovableWall" method="toggle_active_if_player"]
+[node name="Area3D" parent="." instance=ExtResource("8_uqfou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5582972, 0.1, 4.546672)
+
 [connection signal="pressed" from="Button" to="MovableWall" method="toggle_active"]
 [connection signal="body_entered" from="Area3D2" to="MovableWall" method="set_inactive_if_player"]
+[connection signal="body_entered" from="Area3D" to="MovableWall" method="set_active_if_player"]
+[connection signal="body_exited" from="Area3D" to="MovableWall" method="set_inactive_if_player"]
