@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://baard4kloe547"]
+[gd_scene load_steps=12 format=3 uid="uid://baard4kloe547"]
 
 [ext_resource type="PackedScene" uid="uid://dk3bqkf2rry5l" path="res://test_scenes/movable_wall.tscn" id="1_cirfm"]
 [ext_resource type="PackedScene" uid="uid://x8ncv8cvkmg5" path="res://characters/walking_character.tscn" id="2_dh7q0"]
+[ext_resource type="PackedScene" path="res://test_scenes/button.tscn" id="3_6eh5t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dh7q0"]
 size = Vector3(20, 1, 20)
@@ -26,6 +27,13 @@ size = Vector3(0.1, 0.1, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_okhc2"]
 size = Vector3(0.5275879, 1, 0.5116577)
 
+[sub_resource type="Environment" id="Environment_6eh5t"]
+background_mode = 1
+background_color = Color(0.12156863, 0, 0, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.2857
+volumetric_fog_albedo = Color(1, 0.6156863, 0.3529412, 1)
+
 [node name="Scene" type="Node3D"]
 
 [node name="MovableWall" parent="." instance=ExtResource("1_cirfm")]
@@ -48,6 +56,46 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticWall"]
 shape = SubResource("BoxShape3D_6eh5t")
 
+[node name="StaticWall6" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -0.5, -20)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticWall6"]
+mesh = SubResource("BoxMesh_dh7q0")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticWall6"]
+shape = SubResource("BoxShape3D_6eh5t")
+
+[node name="StaticWall7" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -0.5, -20)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticWall7"]
+mesh = SubResource("BoxMesh_dh7q0")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticWall7"]
+shape = SubResource("BoxShape3D_6eh5t")
+
+[node name="StaticWall8" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 4.5, -10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticWall8"]
+mesh = SubResource("BoxMesh_dh7q0")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticWall8"]
+shape = SubResource("BoxShape3D_6eh5t")
+
+[node name="StaticWall9" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4.5, -10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticWall9"]
+mesh = SubResource("BoxMesh_dh7q0")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticWall9"]
+shape = SubResource("BoxShape3D_6eh5t")
+
 [node name="StaticWall2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -0.5, 0)
 
@@ -62,6 +110,16 @@ shape = SubResource("BoxShape3D_6eh5t")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 11, -7.5, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticWall3"]
+mesh = SubResource("BoxMesh_dh7q0")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticWall3"]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, -1, -4.3711385e-08, 4.371139e-08, 4.371139e-08, 4.371139e-08, 1, 3, -10, -2.9999995)
+mesh = SubResource("BoxMesh_dh7q0")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticWall3"]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, -1, -4.3711385e-08, 4.371139e-08, 4.371139e-08, 4.371139e-08, 1, -30, -10, -2.9999995)
 mesh = SubResource("BoxMesh_dh7q0")
 skeleton = NodePath("../..")
 
@@ -91,12 +149,14 @@ shape = SubResource("BoxShape3D_6eh5t")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.56978685, -0.1767123, 0.80256784, -0.033027463, 0.9708936, 0.23722287, -0.82112837, -0.1616733, 0.5473664, 0, 6.682555, 9.388758)
 light_color = Color(0.97, 0, 0, 1)
+light_energy = 0.47
 shadow_enabled = true
 sky_mode = 1
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.31540972, -0.23534834, 0.9193088, -0.033027455, 0.97089374, 0.23722288, -0.9483805, 0.044459946, -0.31400204, 0, 6.682555, 9.388758)
 light_color = Color(0.97, 0, 0, 1)
+light_energy = 0.325
 shadow_enabled = true
 sky_mode = 1
 
@@ -112,6 +172,10 @@ mesh = SubResource("BoxMesh_okhc2")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5675845, -9.536743e-07, 0.5300858)
 mesh = SubResource("BoxMesh_okhc2")
 
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1.7744149, 0, 1, 0, -1, 0, -7.7562134e-08, -3.2530727, 2.0404313, 0.5300858)
+mesh = SubResource("BoxMesh_okhc2")
+
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.795631, 4.7683716e-07, 3.9332037)
 
@@ -119,4 +183,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.795631, 4.7683716e-07, 3.93
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28719568, 0.14658129, 0.17596793)
 shape = SubResource("BoxShape3D_okhc2")
 
+[node name="Button" parent="." instance=ExtResource("3_6eh5t")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -5.281409, 2.125, 0.60712814)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6eh5t")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.814885, 0.57962257, 0, -0.57962257, -0.814885, 0, 3.7268891, -4.778239)
+light_color = Color(1, 0.32999998, 0.3411665, 1)
+shadow_enabled = true
+spot_range = 17.527
+spot_angle = 31.84
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.92288125, -0.22320378, -0.31379977, 0, -0.814885, 0.5796227, -0.38508466, 0.53492284, 0.7520421, -8.694448, 3.7268891, -4.778239)
+light_color = Color(1, 0.32999998, 0.3411665, 1)
+shadow_enabled = true
+spot_range = 17.527
+spot_angle = 31.84
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.71992147, 0.40229028, 0.5655755, -1.6027588e-08, -0.814885, 0.5796227, 0.6940555, 0.4172827, 0.5866533, 8.779343, 3.7268891, -4.778239)
+light_color = Color(1, 0.32999998, 0.3411665, 1)
+shadow_enabled = true
+spot_range = 17.527
+spot_angle = 31.84
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.048989177, 0.5789267, 0.81390667, 3.8860115e-09, -0.8148852, 0.5796227, 0.9987994, 0.028395236, 0.039920688, 2.4506555, 3.7268891, -14.216547)
+light_color = Color(1, 0.32999998, 0.3411665, 1)
+shadow_enabled = true
+spot_range = 17.527
+spot_angle = 31.84
+
 [connection signal="body_entered" from="Area3D" to="MovableWall" method="toggle_active_if_player"]
+[connection signal="pressed" from="Button" to="MovableWall" method="toggle_active"]
