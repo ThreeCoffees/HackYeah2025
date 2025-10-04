@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwilk1ike3iry"]
+
+[ext_resource type="PackedScene" uid="uid://x8ncv8cvkmg5" path="res://characters/walking_character.tscn" id="1_xidai"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xidai"]
+height = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_aqfx2"]
+height = 0.2
+
+[node name="WalkingCharacterSmall" instance=ExtResource("1_xidai")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_xidai")
+
+[node name="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_aqfx2")
