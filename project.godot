@@ -11,8 +11,6 @@ config_version=5
 [application]
 
 config/name="HackYeah2025"
-run/main_scene="res://test_scenes/adam_test_scene.tscn"
-config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]

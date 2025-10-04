@@ -47,6 +47,16 @@ func _physics_process(delta: float) -> void:
 func set_active_val(new_acitve: bool) -> void:
 	is_active = new_acitve
 	
+func toggle_active() -> void:
+	is_active = not is_active
+	
+func toggle_active_dummy_arg(ignored_arg) -> void:
+	is_active = not is_active
+	
+func toggle_active_if_player(body: Node3D) -> void:
+	if body is WalkingCharacter:
+		is_active = not is_active
+	
 func set_active() -> void:
 	is_active = true
 	

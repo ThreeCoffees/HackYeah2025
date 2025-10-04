@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk3bqkf2rry5l"]
+[gd_scene load_steps=5 format=3 uid="uid://dk3bqkf2rry5l"]
 
 [ext_resource type="Script" uid="uid://ch0qojfc5qsuo" path="res://scripts/movable_wall.gd" id="1_q62et"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_q62et"]
+size = Vector3(3, 3, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q62et"]
+albedo_color = Color(0.38170326, 0.38170323, 0.38170323, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_lekti"]
-size = Vector3(2, 2, 0.15)
+material = SubResource("StandardMaterial3D_q62et")
+size = Vector3(3, 3, 0.15)
 
 [node name="MovableWall" type="Node3D" node_paths=PackedStringArray("actual_wall", "active_position", "passive_position")]
 script = ExtResource("1_q62et")
-actual_wall = NodePath("MeshInstance3D")
+actual_wall = NodePath("AnimatableBody3D")
 active_position = NodePath("ActivePosition")
 passive_position = NodePath("PassivePosition")
 
@@ -17,6 +24,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1626873, 1, 0)
 [node name="PassivePosition" type="Node3D" parent="."]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+shape = SubResource("BoxShape3D_q62et")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D"]
 mesh = SubResource("BoxMesh_lekti")
+skeleton = NodePath("../..")
