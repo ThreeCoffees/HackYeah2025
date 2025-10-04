@@ -1,13 +1,20 @@
 extends Node3D
 
+@export var invert_logic = false
 var noise: Noise
-var threshold = -1
-var target_threshold = -1
+var threshold = -1.1
+var target_threshold = -1.1
 var time = 0
 
 func _ready() -> void:
-	GlobalStateManager.sun_started.connect(_on_sun_started)
-	GlobalStateManager.sun_stopped.connect(_on_sun_stopped)
+	if invert_logic:
+		GlobalStateManager.sun_started.connect(_on_sun_stopped)
+		GlobalStateManager.sun_stopped.connect(_on_sun_started)
+		threshold = 1.1
+		target_threshold = 1.1
+	else:
+		GlobalStateManager.sun_started.connect(_on_sun_started)
+		GlobalStateManager.sun_stopped.connect(_on_sun_stopped)
 	
 	noise = FastNoiseLite.new()
 	noise.noise_type = FastNoiseLite.TYPE_SIMPLEX
