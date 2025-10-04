@@ -38,7 +38,7 @@ mesh = SubResource("CylinderMesh_vuo5y")
 surface_material_override/0 = SubResource("StandardMaterial3D_l7w70")
 
 [node name="Collider" type="StaticBody3D" parent="."]
-collision_layer = 7
+collision_layer = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collider"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04284668, 1.450531, -0.0016479492)

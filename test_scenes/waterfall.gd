@@ -14,6 +14,9 @@ var bottom_falling: bool = false;
 func _ready() -> void:
 	GlobalStateManager.rain_started.connect(_on_rain_started)
 	GlobalStateManager.rain_stopped.connect(_on_rain_stopped)
+	
+	if GlobalStateManager.current == "rain":
+		_on_rain_started()
 
 func _on_rain_started() -> void:
 	bottom = 1
