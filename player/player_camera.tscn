@@ -1,6 +1,94 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsbnm1yue8ama"]
+[gd_scene load_steps=14 format=3 uid="uid://dsbnm1yue8ama"]
 
-[ext_resource type="Script" path="res://player/player_camera.gd" id="1_itl3e"]
+[ext_resource type="Script" uid="uid://qmiw0wbij67f" path="res://player/player_camera.gd" id="1_itl3e"]
+[ext_resource type="Shader" uid="uid://bnomuqksyduv" path="res://materials/rain.gdshader" id="2_f3pjq"]
+[ext_resource type="Script" uid="uid://boeyw2bljycn1" path="res://player/rain_enabler.gd" id="2_lvbok"]
+[ext_resource type="Texture2D" uid="uid://33ilrpgditpu" path="res://materials/droplet.png" id="4_lvbok"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dk222"]
+render_priority = 0
+shader = ExtResource("2_f3pjq")
+shader_parameter/droplet = ExtResource("4_lvbok")
+shader_parameter/seed = 1
+shader_parameter/speed = 4.0
+shader_parameter/scale = Vector2(5.27, 10.535)
+shader_parameter/tex_col_mult = Vector4(0.1, 0.5, 1, 0.5)
+shader_parameter/visibility = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wpke4"]
+material = SubResource("ShaderMaterial_dk222")
+flip_faces = true
+top_radius = 1.5
+bottom_radius = 1.5
+height = 30.0
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m0i3c"]
+render_priority = 0
+shader = ExtResource("2_f3pjq")
+shader_parameter/droplet = ExtResource("4_lvbok")
+shader_parameter/seed = 2
+shader_parameter/speed = 8.0
+shader_parameter/scale = Vector2(14.175, 20)
+shader_parameter/tex_col_mult = Vector4(0.1, 0.5, 1, 0.7)
+shader_parameter/visibility = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7b8u4"]
+material = SubResource("ShaderMaterial_m0i3c")
+flip_faces = true
+top_radius = 2.5
+bottom_radius = 2.5
+height = 30.0
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mrrb7"]
+render_priority = 0
+shader = ExtResource("2_f3pjq")
+shader_parameter/droplet = ExtResource("4_lvbok")
+shader_parameter/seed = 3
+shader_parameter/speed = 16.0
+shader_parameter/scale = Vector2(23.89, 30)
+shader_parameter/tex_col_mult = Vector4(0.1, 0.5, 1, 1)
+shader_parameter/visibility = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lvbok"]
+material = SubResource("ShaderMaterial_mrrb7")
+flip_faces = true
+top_radius = 4.0
+bottom_radius = 4.0
+height = 30.0
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wpke4"]
+render_priority = 0
+shader = ExtResource("2_f3pjq")
+shader_parameter/droplet = ExtResource("4_lvbok")
+shader_parameter/seed = 5
+shader_parameter/speed = 16.0
+shader_parameter/scale = Vector2(23.89, 30)
+shader_parameter/tex_col_mult = Vector4(0.1, 0.5, 1, 1)
+shader_parameter/visibility = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dhvwn"]
+material = SubResource("ShaderMaterial_wpke4")
+flip_faces = true
+top_radius = 6.0
+bottom_radius = 6.0
+height = 30.0
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w32ne"]
+material = SubResource("ShaderMaterial_wpke4")
+flip_faces = true
+top_radius = 9.0
+bottom_radius = 9.0
+height = 30.0
+cap_top = false
+cap_bottom = false
 
 [node name="PlayerCamera" type="Camera3D"]
 script = ExtResource("1_itl3e")
@@ -9,3 +97,28 @@ script = ExtResource("1_itl3e")
 target_position = Vector3(0, 0, -30)
 collision_mask = 6
 collide_with_areas = true
+
+[node name="Rain" type="Node3D" parent="."]
+script = ExtResource("2_lvbok")
+
+[node name="RayRainCast" type="RayCast3D" parent="Rain"]
+target_position = Vector3(0, 20, 0)
+
+[node name="RainLayer1" type="MeshInstance3D" parent="Rain"]
+mesh = SubResource("CylinderMesh_wpke4")
+skeleton = NodePath("../..")
+
+[node name="RainLayer2" type="MeshInstance3D" parent="Rain"]
+mesh = SubResource("CylinderMesh_7b8u4")
+
+[node name="RainLayer3" type="MeshInstance3D" parent="Rain"]
+mesh = SubResource("CylinderMesh_lvbok")
+skeleton = NodePath("../RainLayer2")
+
+[node name="RainLayer4" type="MeshInstance3D" parent="Rain"]
+mesh = SubResource("CylinderMesh_dhvwn")
+skeleton = NodePath("../RainLayer2")
+
+[node name="RainLayer5" type="MeshInstance3D" parent="Rain"]
+mesh = SubResource("CylinderMesh_w32ne")
+skeleton = NodePath("../RainLayer2")
