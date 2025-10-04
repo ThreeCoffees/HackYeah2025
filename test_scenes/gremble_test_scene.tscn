@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://baard4kloe547"]
+[gd_scene load_steps=13 format=3 uid="uid://baard4kloe547"]
 
 [ext_resource type="PackedScene" uid="uid://dk3bqkf2rry5l" path="res://walls/movable_wall.tscn" id="1_cirfm"]
 [ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="2_dh7q0"]
@@ -21,18 +21,6 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_okhc2"]
 material = SubResource("StandardMaterial3D_6eh5t")
 size = Vector3(0.1, 0.1, 2)
-
-[sub_resource type="Environment" id="Environment_6eh5t"]
-background_mode = 1
-background_color = Color(0.12156863, 0, 0, 1)
-glow_enabled = true
-glow_bloom = 1.0
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.3
-volumetric_fog_albedo = Color(1, 0.6156863, 0.3529412, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fenjg"]
-size = Vector3(16.08, 4.69, 1)
 
 [node name="Scene" type="Node3D"]
 
@@ -157,15 +145,15 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_6eh5t")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.9890161, -0.0024653208, 0.14778611, -0.033027444, 0.9708936, 0.23722284, -0.14406952, -0.23949824, 0.9601482, 0, 6.682555, 9.388758)
-light_color = Color(0.96862745, 0.10980392, 0.08235294, 1)
+transform = Transform3D(0.98901635, -0.0024653426, 0.14778624, -0.11018089, 0.65418506, 0.7482662, -0.09852426, -0.75633067, 0.64672804, 0, 6.682555, 9.388758)
+light_color = Color(0.97, 0.6790001, 0.5335, 1)
 light_energy = 0.47
 shadow_enabled = true
 sky_mode = 1
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.31540972, -0.23534834, 0.9193088, -0.033027455, 0.97089374, 0.23722288, -0.9483805, 0.044459946, -0.31400204, 0, 6.682555, 9.388758)
-light_color = Color(0.96862745, 0.24313726, 0.25490198, 1)
+transform = Transform3D(-0.2302931, -0.7772752, 0.58549833, -0.21803498, 0.6275879, 0.7473917, -0.94838065, 0.044460006, -0.3140023, 0, 8.085836, 12.794437)
+light_color = Color(0.97, 0.7663, 0.6305, 1)
 light_energy = 0.325
 shadow_enabled = true
 sky_mode = 1
@@ -184,9 +172,6 @@ mesh = SubResource("BoxMesh_okhc2")
 
 [node name="Button" parent="." instance=ExtResource("3_6eh5t")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -5.281409, 2.125, 0.60712814)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_6eh5t")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.814885, 0.57962257, 0, -0.57962257, -0.814885, 0, 3.7268891, -4.778239)
@@ -216,13 +201,6 @@ shadow_enabled = true
 spot_range = 17.527
 spot_angle = 31.84
 
-[node name="Area3D2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.912654, -5.1567426)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2051005)
-shape = SubResource("BoxShape3D_fenjg")
-
 [node name="GlobalStateButton3" parent="." instance=ExtResource("5_fenjg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5784683, 0, 4.6077747)
 
@@ -232,14 +210,6 @@ property = "sun"
 
 [node name="Waterfall" parent="." instance=ExtResource("6_xmw63")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.2875433, 0, 9.178755)
-
-[node name="SpotLight3D5" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -12.7467165, 3.6805854, 4.0827923)
-light_energy = 16.0
-light_volumetric_fog_energy = 4.179
-spot_range = 4.045
-spot_attenuation = -2.63
-spot_angle = 16.34
 
 [node name="LightWall" parent="." instance=ExtResource("7_2tu86")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.0679626, 0, 2.729823)
@@ -251,6 +221,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5272045, 0.4386816, 2.91207
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5582972, 0.1, 4.546672)
 
 [connection signal="pressed" from="Button" to="MovableWall" method="toggle_active"]
-[connection signal="body_entered" from="Area3D2" to="MovableWall" method="set_inactive_if_player"]
 [connection signal="body_entered" from="Area3D" to="MovableWall" method="set_active_if_player"]
 [connection signal="body_exited" from="Area3D" to="MovableWall" method="set_inactive_if_player"]
