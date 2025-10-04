@@ -1,12 +1,17 @@
 extends Camera3D
+class_name PlayerCamera;
 
 const mouse_sensitivity = 0.003;
 
 @onready var picking_ray = $PickingRayCast;
 
+static var instance;
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
-	
+	if is_instance_valid(instance):
+		print("only one player camera allowed");
+	instance = self;
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

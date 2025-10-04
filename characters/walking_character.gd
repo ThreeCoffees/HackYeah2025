@@ -36,3 +36,8 @@ func _physics_process(delta: float) -> void:
 	
 func _on_pick_input():
 	print("picked");
+	set_as_player();
+	
+func set_as_player():
+	var player_camera = PlayerCamera.instance;
+	player_camera.reparent(self, false);
