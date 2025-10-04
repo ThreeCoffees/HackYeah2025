@@ -50,7 +50,7 @@ func set_active_val(new_acitve: bool) -> void:
 func toggle_active() -> void:
 	is_active = not is_active
 	
-func toggle_active_dummy_arg(ignored_arg) -> void:
+func toggle_active_dummy_arg(_ignored_arg) -> void:
 	is_active = not is_active
 	
 func toggle_active_if_player(body: Node3D) -> void:
