@@ -25,6 +25,9 @@ func set_property(property: String, value: bool) -> void:
 		print("WRONG PROPERTY!!! " + property)
 
 func set_rain(new_rain: bool) -> void:
+	if new_rain == rain:
+		return
+	
 	print("setting rain to " + str(new_rain))
 	rain = new_rain;
 	rain_changed.emit(rain)
@@ -34,6 +37,9 @@ func set_rain(new_rain: bool) -> void:
 		rain_stopped.emit()
 
 func set_sun(new_sun: bool) -> void:
+	if new_sun == sun:
+		return
+	
 	print("setting sun to " + str(new_sun))
 	sun = new_sun;
 	sun_changed.emit(sun)
@@ -43,6 +49,9 @@ func set_sun(new_sun: bool) -> void:
 		sun_stopped.emit()
 
 func set_death(new_death: bool) -> void:
+	if new_death == death:
+		return
+	
 	print("setting death to " + str(new_death))
 	death = new_death;
 	death_changed.emit(death)
