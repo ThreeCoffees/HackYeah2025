@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bto115mhdyubd"]
+
+[ext_resource type="Script" uid="uid://bshf6r3q7oj2k" path="res://characters/flying_character.gd" id="1_6kj3i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6kj3i"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_evaoo"]
+
+[node name="FlyingCharacter" type="CharacterBody3D"]
+script = ExtResource("1_6kj3i")
+metadata/_custom_type_script = "uid://ba7rvi6gf7o0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_6kj3i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_evaoo")
+
+[node name="CameraOffset" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5810886)

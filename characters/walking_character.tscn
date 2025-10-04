@@ -10,6 +10,7 @@ height = 1.8
 
 [node name="WalkingCharacter" type="CharacterBody3D"]
 script = ExtResource("1_oiig4")
+metadata/_custom_type_script = "uid://ba7rvi6gf7o0r"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -18,3 +19,6 @@ shape = SubResource("CapsuleShape3D_a4eba")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_oiig4")
+
+[node name="CameraOffset" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4439663, -0.593572)
