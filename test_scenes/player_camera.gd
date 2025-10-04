@@ -15,7 +15,7 @@ func _unhandled_input(event):
 		rotation.x = clampf(rotation.x, -deg_to_rad(70), deg_to_rad(70));
 
 
-func _process(delta: float):
+func _process(_delta: float):
 	if Input.is_action_just_pressed("pick"):
 		var picked_object = picking_ray.get_collider();
 		if not is_instance_valid(picked_object):
