@@ -1,13 +1,17 @@
 extends Camera3D
 class_name PlayerCamera;
 
-const mouse_sensitivity = 0.003;
+@export var transition_time = 0.3;
+var target_transform;
+var start_transform;
 
+const mouse_sensitivity = 0.003;
 @onready var picking_ray = $PickingRayCast;
+var input_locked = false;
+var t:float = 0;
+
 
 static var instance;
-
-var input_locked = false;
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
@@ -24,12 +28,24 @@ func _unhandled_input(event):
 		rotation.x = clampf(rotation.x, -deg_to_rad(70), deg_to_rad(70));
 		
 func transfer_camera(new_parent: PlayableCharacter):
-	reparent(new_parent, false);
+	reparent(new_parent, true);
 	input_locked = true;
-	position = new_parent.camera_offset.position;
-
+	
+	start_transform = transform;
+	target_transform = new_parent.camera_offset.transform;
 
 func _process(_delta: float):
+	if input_locked:
+		t+= _delta;
+		
+		var weight = clampf(t / transition_time, 0, 1);
+		
+		transform = start_transform.interpolate_with(target_transform, weight);
+		if t >= transition_time:
+			transform = target_transform;
+			input_locked = false;
+			t = 0;
+		return
 	if Input.is_action_just_pressed("pick"):
 		var picked_object = picking_ray.get_collider();
 		if not is_instance_valid(picked_object):
