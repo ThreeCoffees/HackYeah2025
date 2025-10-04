@@ -5,21 +5,16 @@ class_name WalkingCharacter
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-const mouse_sensitivity = 0.001
-
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
-
-func _input(event):
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(-event.relative.x * mouse_sensitivity);
-		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity);
-		$Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70));
+func is_player():
+	return is_instance_valid(get_node_or_null("PlayerCamera"));
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	if not is_player():
+		return
 
 	# Handle jump.
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -38,3 +33,6 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+func _on_pick_input():
+	print("picked");

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8bq1fncgd3gn"]
+[gd_scene load_steps=5 format=3 uid="uid://b8bq1fncgd3gn"]
 
 [ext_resource type="PackedScene" uid="uid://x8ncv8cvkmg5" path="res://characters/walking_character.tscn" id="1_rw8bm"]
+[ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="2_pv81j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_moyko"]
 size = Vector3(20, 1, 20)
@@ -22,5 +23,8 @@ shape = SubResource("BoxShape3D_rw8bm")
 
 [node name="WalkingCharacter" parent="." instance=ExtResource("1_rw8bm")]
 
-[node name="Camera3D" type="Camera3D" parent="WalkingCharacter"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63044, -0.526707)
+[node name="PlayerCamera" parent="WalkingCharacter" instance=ExtResource("2_pv81j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6304364, -0.5267069)
+
+[node name="WalkingCharacter2" parent="." instance=ExtResource("1_rw8bm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.468672)
