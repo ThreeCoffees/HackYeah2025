@@ -61,4 +61,8 @@ func set_active() -> void:
 	is_active = true
 	
 func set_inactive() -> void:
-	is_active = true
+	is_active = false
+	
+func set_inactive_if_player(body: Node3D) -> void:
+	if body is WalkingCharacter:
+		is_active = false

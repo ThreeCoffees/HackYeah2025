@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://baard4kloe547"]
+[gd_scene load_steps=13 format=3 uid="uid://baard4kloe547"]
 
 [ext_resource type="PackedScene" uid="uid://dk3bqkf2rry5l" path="res://test_scenes/movable_wall.tscn" id="1_cirfm"]
 [ext_resource type="PackedScene" uid="uid://x8ncv8cvkmg5" path="res://characters/walking_character.tscn" id="2_dh7q0"]
@@ -33,6 +33,9 @@ background_color = Color(0.12156863, 0, 0, 1)
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.2857
 volumetric_fog_albedo = Color(1, 0.6156863, 0.3529412, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fenjg"]
+size = Vector3(16.08, 4.69, 1)
 
 [node name="Scene" type="Node3D"]
 
@@ -147,7 +150,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_6eh5t")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.56978685, -0.1767123, 0.80256784, -0.033027463, 0.9708936, 0.23722287, -0.82112837, -0.1616733, 0.5473664, 0, 6.682555, 9.388758)
+transform = Transform3D(0.9890161, -0.0024653208, 0.14778611, -0.033027444, 0.9708936, 0.23722284, -0.14406952, -0.23949824, 0.9601482, 0, 6.682555, 9.388758)
 light_color = Color(0.97, 0, 0, 1)
 light_energy = 0.47
 shadow_enabled = true
@@ -217,5 +220,13 @@ shadow_enabled = true
 spot_range = 17.527
 spot_angle = 31.84
 
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.912654, -5.1567426)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2051005)
+shape = SubResource("BoxShape3D_fenjg")
+
 [connection signal="body_entered" from="Area3D" to="MovableWall" method="toggle_active_if_player"]
 [connection signal="pressed" from="Button" to="MovableWall" method="toggle_active"]
+[connection signal="body_entered" from="Area3D2" to="MovableWall" method="set_inactive_if_player"]
