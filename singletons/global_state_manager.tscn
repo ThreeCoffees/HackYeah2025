@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqg42td14gah7"]
+[gd_scene load_steps=3 format=3 uid="uid://dqg42td14gah7"]
 
 [ext_resource type="Script" uid="uid://b15weeq83242d" path="res://singletons/global_state_manager.gd" id="1_01d2f"]
 
+[sub_resource type="Environment" id="Environment_01d2f"]
+background_mode = 1
+background_color = Color(0.9999884, 0.2846116, 0.34448847, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.3
+volumetric_fog_albedo = Color(1, 0.33111235, 0.30597562, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_anisotropy = 0.9
+
 [node name="GlobalStateManager" type="Node"]
 script = ExtResource("1_01d2f")
+sky_color_sun = Color(1, 0.592, 0.32, 1)
+volumetric_density_sun = 0.1
+volumetric_anisotropy_sun = 0.9
+sky_color_rain = Color(0.43679997, 0.47112006, 0.78, 1)
+volumetric_density_rain = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_01d2f")
