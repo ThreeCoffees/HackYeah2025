@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://ovbbkmc7s564"]
+[gd_scene load_steps=17 format=3 uid="uid://ovbbkmc7s564"]
 
+[ext_resource type="PackedScene" uid="uid://bc8aagpd2mxau" path="res://ui/PauseMenu.tscn" id="1_hbb88"]
 [ext_resource type="PackedScene" uid="uid://bto115mhdyubd" path="res://characters/flying_character.tscn" id="1_ilhis"]
 [ext_resource type="Texture2D" uid="uid://c8tl43kj46m0b" path="res://assets/column_tiles.png" id="2_dfjjl"]
 [ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://walls/waterfall.tscn" id="3_5722l"]
@@ -40,6 +41,8 @@ uv1_triplanar = true
 texture_filter = 0
 
 [node name="Level2" type="Node3D"]
+
+[node name="PauseMenu" parent="." instance=ExtResource("1_hbb88")]
 
 [node name="Characters" type="Node3D" parent="."]
 
