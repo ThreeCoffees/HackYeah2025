@@ -31,8 +31,6 @@ var current_sky_b: float;
 var current_volumetric_density: float;
 var current_volumetric_anisotropy: float;
 
-@onready var sun:= $DirectionalLight3D;
-
 func _ready() -> void:
 	if current == "sun":
 		_on_sun_started()
@@ -72,7 +70,6 @@ func _process(delta: float) -> void:
 	env.volumetric_fog_albedo = sky_col
 	env.volumetric_fog_density = current_volumetric_density
 	env.volumetric_fog_anisotropy = current_volumetric_anisotropy
-	sun.light_color = sky_col
 
 func set_property(property: String) -> void:
 	if not ["rain", "sun"].has(property):
