@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dfwo5idt4idhe"]
+[gd_scene load_steps=0 format=3 uid="uid://dfwo5idt4idhe"]
 
 [node name="Crosshair" type="Control"]
 process_mode = 4

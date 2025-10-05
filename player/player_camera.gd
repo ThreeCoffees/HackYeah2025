@@ -26,7 +26,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		get_parent().rotate_y(-event.relative.x * mouse_sensitivity);
 		rotate_x(-event.relative.y * mouse_sensitivity);
-		rotation.x = clampf(rotation.x, -deg_to_rad(70), deg_to_rad(70));
+		rotation.x = clampf(rotation.x, -deg_to_rad(85), deg_to_rad(85));
 		
 func transfer_camera(new_parent: PlayableCharacter):
 	var parent = get_parent();
