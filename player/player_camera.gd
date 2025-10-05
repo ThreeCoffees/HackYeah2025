@@ -32,6 +32,7 @@ func transfer_camera(new_parent: PlayableCharacter):
 	parent.input_dir = Vector2();
 	parent.input_vertical = 0.0;
 	parent.velocity = Vector3();
+	parent.visible = true;
 	
 	reparent(new_parent, true);
 	input_locked = true;

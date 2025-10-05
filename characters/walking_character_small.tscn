@@ -1,22 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwilk1ike3iry"]
+[gd_scene load_steps=5 format=3 uid="uid://dwilk1ike3iry"]
 
-[ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="1_xidai"]
+[ext_resource type="PackedScene" uid="uid://b4xmcokbmqma" path="res://characters/playable_character.tscn" id="1_aqfx2"]
+[ext_resource type="Script" uid="uid://yrrwjkv6vvx4" path="res://characters/walking_character.gd" id="2_pxgih"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_xidai"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dy53j"]
 height = 0.2
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_aqfx2"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_teljo"]
 height = 0.2
 
-[node name="WalkingCharacterSmall" instance=ExtResource("1_xidai")]
+[node name="WalkingCharacterSmall" instance=ExtResource("1_aqfx2")]
+script = ExtResource("2_pxgih")
 
 [node name="CameraOffset" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5951905)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012531638, -0.37613356)
 
-[node name="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("CylinderShape3D_xidai")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("CylinderShape3D_dy53j")
 
-[node name="MeshInstance3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CylinderMesh_aqfx2")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+mesh = SubResource("CylinderMesh_teljo")

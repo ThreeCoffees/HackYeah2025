@@ -6,6 +6,12 @@ class_name PlayableCharacter
 var input_dir:= Vector2();
 var input_vertical:=0.0;
 
+func _ready():
+	if is_player():
+		var camera = get_node_or_null("PlayerCamera");
+		camera.position = camera_offset.position;
+		visible = false;
+
 
 func is_player():
 	var camera = get_node_or_null("PlayerCamera");
@@ -17,3 +23,4 @@ func _on_pick_input(emitter_position):
 func set_as_player():
 	var player_camera = PlayerCamera.instance;
 	player_camera.transfer_camera(self);
+	visible = false;
