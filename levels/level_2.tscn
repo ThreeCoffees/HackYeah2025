@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ovbbkmc7s564"]
+[gd_scene load_steps=23 format=3 uid="uid://ovbbkmc7s564"]
 
 [ext_resource type="PackedScene" uid="uid://bc8aagpd2mxau" path="res://ui/PauseMenu.tscn" id="1_hbb88"]
 [ext_resource type="PackedScene" uid="uid://bto115mhdyubd" path="res://characters/flying_character.tscn" id="1_ilhis"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c8tl43kj46m0b" path="res://assets/column_tiles.png" id="2_dfjjl"]
 [ext_resource type="PackedScene" uid="uid://dfwo5idt4idhe" path="res://ui/crosshair.tscn" id="2_uo0vl"]
 [ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://walls/waterfall.tscn" id="3_5722l"]
-[ext_resource type="Texture2D" uid="uid://g2qbljkc80cr" path="res://assets/wall_tiles.png" id="3_at1ld"]
 [ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://activators/global_state_button.tscn" id="4_ilhis"]
 [ext_resource type="PackedScene" uid="uid://defrlu2sytjq1" path="res://ui/level_complete.tscn" id="4_ndgrd"]
 [ext_resource type="Texture2D" uid="uid://dvsjoo503gl0f" path="res://assets/floor_tiles.png" id="4_sd18g"]
@@ -15,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://biv5d65umpjqc" path="res://walls/light_wall.tscn" id="6_ep78u"]
 [ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="6_ilhis"]
 [ext_resource type="PackedScene" uid="uid://dwilk1ike3iry" path="res://characters/walking_character_small.tscn" id="7_ep78u"]
+[ext_resource type="Material" uid="uid://cai0nx5rg0ysy" path="res://materials/wall_tiles.tres" id="11_ndgrd"]
 [ext_resource type="PackedScene" uid="uid://crihsikubvc82" path="res://props/torch.tscn" id="13_wcjpl"]
 [ext_resource type="PackedScene" uid="uid://d1i61tf6odqmq" path="res://props/exit_text_label.tscn" id="14_5orea"]
 [ext_resource type="PackedScene" uid="uid://bcabqqgu1mjfg" path="res://props/exit_arrow_label.tscn" id="15_0ourt"]
@@ -32,12 +32,6 @@ texture_filter = 0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_at1ld"]
 render_priority = 3
 albedo_texture = ExtResource("2_dfjjl")
-uv1_triplanar = true
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfjjl"]
-render_priority = 2
-albedo_texture = ExtResource("3_at1ld")
 uv1_triplanar = true
 texture_filter = 0
 
@@ -167,7 +161,7 @@ size = Vector3(0.5, 9.5, 0.5)
 
 [node name="Walls" type="CSGCombiner3D" parent="StaticWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.5, -2.875)
-material_override = SubResource("StandardMaterial3D_dfjjl")
+material_override = ExtResource("11_ndgrd")
 use_collision = true
 collision_layer = 3
 collision_mask = 0
