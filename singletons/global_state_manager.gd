@@ -52,11 +52,15 @@ func _on_rain_started() -> void:
 	target_sky_color = sky_color_rain
 	target_volumetric_density = volumetric_density_rain
 	target_volumetric_anisotropy = volumetric_anisotropy_rain
+	AudioManager.stop("ambient_sun")
+	AudioManager.play("ambient_rain")
 
 func _on_sun_started() -> void:
 	target_sky_color = sky_color_sun
 	target_volumetric_density = volumetric_density_sun
 	target_volumetric_anisotropy = volumetric_anisotropy_sun
+	AudioManager.stop("ambient_rain")
+	AudioManager.play("ambient_sun")
 
 func _process(delta: float) -> void:
 	current_sky_r = move_toward(float(current_sky_r), float(target_sky_color.r), delta * CHANGE_SPEED)
