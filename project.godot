@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 AudioManager="*res://singletons/audio_manager.tscn"
 GlobalStateManager="*res://singletons/global_state_manager.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="HackYeah2025"
