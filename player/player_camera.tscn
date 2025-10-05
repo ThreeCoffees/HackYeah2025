@@ -103,6 +103,7 @@ script = ExtResource("2_lvbok")
 
 [node name="RayRainCast" type="RayCast3D" parent="Rain"]
 target_position = Vector3(0, 20, 0)
+collision_mask = 2
 
 [node name="RainLayer1" type="MeshInstance3D" parent="Rain"]
 mesh = SubResource("CylinderMesh_wpke4")
