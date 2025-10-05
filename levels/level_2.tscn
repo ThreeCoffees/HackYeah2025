@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ovbbkmc7s564"]
+[gd_scene load_steps=23 format=3 uid="uid://ovbbkmc7s564"]
 
 [ext_resource type="PackedScene" uid="uid://bc8aagpd2mxau" path="res://ui/PauseMenu.tscn" id="1_hbb88"]
 [ext_resource type="PackedScene" uid="uid://bto115mhdyubd" path="res://characters/flying_character.tscn" id="1_ilhis"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://crihsikubvc82" path="res://props/torch.tscn" id="13_wcjpl"]
 [ext_resource type="PackedScene" uid="uid://d1i61tf6odqmq" path="res://props/exit_text_label.tscn" id="14_5orea"]
 [ext_resource type="PackedScene" uid="uid://bcabqqgu1mjfg" path="res://props/exit_arrow_label.tscn" id="15_0ourt"]
+[ext_resource type="PackedScene" uid="uid://oc2bf15m3rfo" path="res://characters/end_level_body.tscn" id="17_uo0vl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilhis"]
 transparency = 2
@@ -375,3 +376,6 @@ transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0,
 
 [node name="ExitArrowLabel" parent="." instance=ExtResource("15_0ourt")]
 transform = Transform3D(3, 2.6226832e-07, 4.5298748e-07, 2.6226832e-07, -3, 3.9601423e-14, 4.5298748e-07, 0, -3, 0, 4, 3.7)
+
+[node name="EndLevelBody" parent="." instance=ExtResource("17_uo0vl")]
+transform = Transform3D(0.68599993, 0.5940934, -1.029, -1.1881868, 0.34299994, -0.5940934, 0, 1.1881868, 0.6859999, 0, 1.75, 9)
