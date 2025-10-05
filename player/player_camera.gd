@@ -67,4 +67,4 @@ func _process(_delta: float):
 		if not is_instance_valid(picked_object):
 			return
 		if picked_object.has_method("_on_pick_input"):
-			picked_object._on_pick_input(position);
+			picked_object._on_pick_input(global_position);

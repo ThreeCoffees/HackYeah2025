@@ -27,6 +27,7 @@ func set_as_player():
 	var player_camera = PlayerCamera.instance;
 	player_camera.transfer_camera(self);
 	visible = false;
+	AudioManager.play("swoosh")
 	
 
 func _on_crosshair_hover():
