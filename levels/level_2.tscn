@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bc8aagpd2mxau" path="res://ui/PauseMenu.tscn" id="1_hbb88"]
 [ext_resource type="PackedScene" uid="uid://bto115mhdyubd" path="res://characters/flying_character.tscn" id="1_ilhis"]
-[ext_resource type="Script" uid="uid://bgrxekjy2bmc5" path="res://levels/reset_global_state_on_load.gd" id="1_w200a"]
+[ext_resource type="Script" path="res://levels/reset_global_state_on_load.gd" id="1_w200a"]
 [ext_resource type="Texture2D" uid="uid://c8tl43kj46m0b" path="res://assets/column_tiles.png" id="2_dfjjl"]
 [ext_resource type="PackedScene" uid="uid://dfwo5idt4idhe" path="res://ui/crosshair.tscn" id="2_uo0vl"]
 [ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://walls/waterfall.tscn" id="3_5722l"]
