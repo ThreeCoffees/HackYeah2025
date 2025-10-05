@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwilk1ike3iry"]
+[gd_scene load_steps=6 format=3 uid="uid://dwilk1ike3iry"]
 
 [ext_resource type="PackedScene" uid="uid://b4xmcokbmqma" path="res://characters/playable_character.tscn" id="1_aqfx2"]
 [ext_resource type="Script" uid="uid://yrrwjkv6vvx4" path="res://characters/walking_character.gd" id="2_pxgih"]
 [ext_resource type="PackedScene" uid="uid://b82awn5jir7ky" path="res://meshes/Roomba.glb" id="3_pxgih"]
+[ext_resource type="Script" uid="uid://brcu04mgq1de5" path="res://activators/highlight_gltf_on_hover.gd" id="4_dy53j"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dy53j"]
 height = 0.2
@@ -18,3 +19,8 @@ shape = SubResource("CylinderShape3D_dy53j")
 
 [node name="Roomba2" parent="." index="2" instance=ExtResource("3_pxgih")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("4_dy53j")
+highlight_amount = 4.0
+
+[connection signal="hover_end" from="." to="Roomba2" method="end_highlight"]
+[connection signal="hover_start" from="." to="Roomba2" method="start_highlight"]

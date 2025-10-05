@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bto115mhdyubd" path="res://characters/flying_character.tscn" id="1_ilhis"]
 [ext_resource type="Script" path="res://levels/reset_global_state_on_load.gd" id="1_w200a"]
 [ext_resource type="Texture2D" uid="uid://c8tl43kj46m0b" path="res://assets/column_tiles.png" id="2_dfjjl"]
+[ext_resource type="PackedScene" uid="uid://dfwo5idt4idhe" path="res://ui/crosshair.tscn" id="2_uo0vl"]
 [ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://walls/waterfall.tscn" id="3_5722l"]
 [ext_resource type="Texture2D" uid="uid://g2qbljkc80cr" path="res://assets/wall_tiles.png" id="3_at1ld"]
 [ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://activators/global_state_button.tscn" id="4_ilhis"]
@@ -47,6 +48,8 @@ texture_filter = 0
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_w200a")
+
+[node name="Crosshair" parent="." instance=ExtResource("2_uo0vl")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_hbb88")]
 

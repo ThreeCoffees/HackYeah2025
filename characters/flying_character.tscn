@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bto115mhdyubd"]
+[gd_scene load_steps=6 format=3 uid="uid://bto115mhdyubd"]
 
 [ext_resource type="PackedScene" uid="uid://b4xmcokbmqma" path="res://characters/playable_character.tscn" id="1_6kj3i"]
 [ext_resource type="Script" uid="uid://bshf6r3q7oj2k" path="res://characters/flying_character.gd" id="2_evaoo"]
 [ext_resource type="PackedScene" uid="uid://dupx4v21exn3r" path="res://meshes/Gargoyle.glb" id="3_58oc1"]
+[ext_resource type="Script" uid="uid://brcu04mgq1de5" path="res://activators/highlight_gltf_on_hover.gd" id="4_ce0ri"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_evaoo"]
 
@@ -17,3 +18,8 @@ shape = SubResource("SphereShape3D_evaoo")
 
 [node name="Gargoyle" parent="." index="2" instance=ExtResource("3_58oc1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("4_ce0ri")
+highlight_amount = 4.0
+
+[connection signal="hover_end" from="." to="Gargoyle" method="end_highlight"]
+[connection signal="hover_start" from="." to="Gargoyle" method="start_highlight"]
