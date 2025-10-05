@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwh5ch0dfk7nl"]
+[gd_scene load_steps=14 format=3 uid="uid://bwh5ch0dfk7nl"]
 
 [ext_resource type="Script" uid="uid://dceunjbyu521y" path="res://singletons/audio_manager.gd" id="1_gs1iy"]
 [ext_resource type="AudioStream" uid="uid://1yrrf4xlphk6" path="res://audio/flick1.mp3" id="2_k2j73"]
@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://t72xasmgqqje" path="res://audio/swoosh1.mp3" id="7_ygcpw"]
 [ext_resource type="AudioStream" uid="uid://d3kokvfar1c3t" path="res://audio/swoosh2.mp3" id="8_vu5qj"]
 [ext_resource type="AudioStream" uid="uid://bilwhqvdlhoee" path="res://audio/swoosh3.mp3" id="9_aegvw"]
+[ext_resource type="AudioStream" uid="uid://diln274636no4" path="res://assets/rain_ambient.ogg" id="10_vu5qj"]
+[ext_resource type="AudioStream" uid="uid://d1qh5uvsrdd3" path="res://assets/sun_ambient.ogg" id="11_aegvw"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_64kr0"]
 random_pitch = 1.1
@@ -37,3 +39,9 @@ stream = SubResource("AudioStreamRandomizer_64kr0")
 [node name="swoosh" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_05bqm")
 pitch_scale = 0.6
+
+[node name="ambient_rain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_vu5qj")
+
+[node name="ambient_sun" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_aegvw")
