@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="6_ilhis"]
 [ext_resource type="PackedScene" uid="uid://dwilk1ike3iry" path="res://characters/walking_character_small.tscn" id="7_ep78u"]
 [ext_resource type="PackedScene" uid="uid://crihsikubvc82" path="res://props/torch.tscn" id="13_wcjpl"]
-[ext_resource type="PackedScene" path="res://props/exit_text_label.tscn" id="14_5orea"]
-[ext_resource type="PackedScene" uid="uid://ddj251yfwjrod" path="res://props/exit_arrow_label.tscn" id="15_0ourt"]
+[ext_resource type="PackedScene" uid="uid://d1i61tf6odqmq" path="res://props/exit_text_label.tscn" id="14_5orea"]
+[ext_resource type="PackedScene" uid="uid://bcabqqgu1mjfg" path="res://props/exit_arrow_label.tscn" id="15_0ourt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilhis"]
 transparency = 2
@@ -369,4 +369,4 @@ transform = Transform3D(-1, 2.262668e-08, 8.444392e-08, -8.881784e-16, 0.9659259
 transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0, 2.25, 3.675)
 
 [node name="ExitArrowLabel" parent="." instance=ExtResource("15_0ourt")]
-transform = Transform3D(3, -2.3841858e-07, 4.5298748e-07, -2.3841858e-07, -3, 0, 4.529875e-07, -2.1316285e-14, -3, 0, 3.75, 3.675)
+transform = Transform3D(3, 2.6226832e-07, 4.5298748e-07, 2.6226832e-07, -3, 3.9601423e-14, 4.5298748e-07, 0, -3, 0, 4, 3.7)
