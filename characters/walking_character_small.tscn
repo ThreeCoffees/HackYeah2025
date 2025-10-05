@@ -20,6 +20,7 @@ shape = SubResource("CylinderShape3D_dy53j")
 [node name="Roomba2" parent="." index="2" instance=ExtResource("3_pxgih")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("4_dy53j")
+highlight_amount = 4.0
 
 [connection signal="hover_end" from="." to="Roomba2" method="end_highlight"]
 [connection signal="hover_start" from="." to="Roomba2" method="start_highlight"]
