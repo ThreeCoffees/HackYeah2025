@@ -18,6 +18,10 @@ func toggle_end():
 	visible = is_paused
 	Engine.time_scale = 0
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+func _input(event):
+	if event is InputEventKey:
+		get_viewport().set_input_as_handled();
 
 func restart_game():
 	get_tree().reload_current_scene()

@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b4xmcokbmqma" path="res://characters/playable_character.tscn" id="1_p3t7d"]
 [ext_resource type="PackedScene" uid="uid://cvdjg4iwsyuc3" path="res://meshes/Heart.glb" id="2_cu7fx"]
-[ext_resource type="Script" uid="uid://brcu04mgq1de5" path="res://activators/highlight_gltf_on_hover.gd" id="4_ev1a6"]
 [ext_resource type="Script" uid="uid://c10oc4eynkxxv" path="res://characters/end_level_body.gd" id="2_ev3yo"]
+[ext_resource type="Script" uid="uid://brcu04mgq1de5" path="res://activators/highlight_gltf_on_hover.gd" id="4_ev1a6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ev3yo"]
 radius = 0.882
