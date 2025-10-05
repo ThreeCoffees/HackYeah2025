@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc8aagpd2mxau"]
+[gd_scene load_steps=5 format=3 uid="uid://bc8aagpd2mxau"]
 
 [ext_resource type="Script" uid="uid://dh8jkvqods02" path="res://ui/pause_menu.gd" id="1_c7v6e"]
 [ext_resource type="FontFile" uid="uid://cxrrbcifna6m1" path="res://assets/Texturina-Italic-VariableFont_opsz,wght.ttf" id="2_4dg4t"]
 [ext_resource type="Script" uid="uid://wockr5qc1wdb" path="res://ui/pause_menu_button.gd" id="3_1q10k"]
+[ext_resource type="Texture2D" uid="uid://br1rfirfror0e" path="res://assets/pause_tutorial.png" id="4_4dg4t"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -77,9 +78,19 @@ text = "To main menu"
 fit_content = true
 script = ExtResource("3_1q10k")
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+[node name="CenterContainer" type="Control" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_4dg4t")
+expand_mode = 3
 
 [connection signal="clicked" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer2/Continue" to="." method="resume_game"]
 [connection signal="clicked" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer2/Restart" to="." method="restart_game"]
