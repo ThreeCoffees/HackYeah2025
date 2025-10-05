@@ -5,8 +5,8 @@ const SPEED = 5.0
 
 func _physics_process(delta: float) -> void:
 	if is_player():
-		var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
-		var input_vertical := Input.get_axis("move_down", "move_up");
+		input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
+		input_vertical = Input.get_axis("move_down", "move_up");
 		
 		var direction := (transform.basis * Vector3(input_dir.x, input_vertical, input_dir.y)).normalized()
 		
