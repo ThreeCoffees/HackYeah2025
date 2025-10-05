@@ -1,6 +1,9 @@
 extends CharacterBody3D
 class_name PlayableCharacter
 
+signal hover_start
+signal hover_end
+
 @onready var camera_offset = $CameraOffset;
 
 var input_dir:= Vector2();
@@ -24,3 +27,10 @@ func set_as_player():
 	var player_camera = PlayerCamera.instance;
 	player_camera.transfer_camera(self);
 	visible = false;
+	
+
+func _on_crosshair_hover():
+	hover_start.emit()
+
+func _on_crosshair_hover_end():
+	hover_end.emit()
