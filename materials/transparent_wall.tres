@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b6tga0lbp3h6r"]
+
+[ext_resource type="Texture2D" uid="uid://bc2fe4p2pkbkt" path="res://assets/bars_tiles.png" id="1_p1x4c"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.009
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = ExtResource("1_p1x4c")
+uv1_triplanar = true
+texture_filter = 0

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b8v8tarlu0rjq"]
+
+[ext_resource type="Texture2D" uid="uid://dvsjoo503gl0f" path="res://assets/floor_tiles.png" id="1_l5lv3"]
+
+[resource]
+render_priority = 1
+albedo_texture = ExtResource("1_l5lv3")
+uv1_triplanar = true
+texture_filter = 0
