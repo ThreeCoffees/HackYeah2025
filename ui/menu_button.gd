@@ -19,6 +19,7 @@ func _on_gui_input(event: InputEvent) -> void:
 	
 	var mouse_event: InputEventMouseButton = event
 	if mouse_event.button_index == 1 and mouse_event.button_mask == 0:
+		if level_scene == null: return
 		var instance = level_scene.instantiate()
 		var tree = get_tree()
 		var cur_scene = tree.get_current_scene()
