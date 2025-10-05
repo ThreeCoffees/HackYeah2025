@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qmiw0wbij67f" path="res://player/player_camera.gd" id="1_itl3e"]
 [ext_resource type="Shader" uid="uid://bnomuqksyduv" path="res://materials/rain.gdshader" id="2_f3pjq"]
-[ext_resource type="Script" uid="uid://boeyw2bljycn1" path="res://player/rain_enabler.gd" id="2_lvbok"]
+[ext_resource type="Script" path="res://player/rain_enabler.gd" id="2_lvbok"]
 [ext_resource type="Texture2D" uid="uid://33ilrpgditpu" path="res://materials/droplet.png" id="4_lvbok"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dk222"]
@@ -94,7 +94,7 @@ cap_bottom = false
 script = ExtResource("1_itl3e")
 
 [node name="PickingRayCast" type="RayCast3D" parent="."]
-target_position = Vector3(0, 0, -30)
+target_position = Vector3(0, 0, -50)
 collision_mask = 6
 collide_with_areas = true
 

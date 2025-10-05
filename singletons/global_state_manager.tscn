@@ -5,6 +5,9 @@
 [sub_resource type="Environment" id="Environment_01d2f"]
 background_mode = 1
 background_color = Color(0.9999884, 0.2846116, 0.34448847, 1)
+ssao_enabled = true
+ssao_radius = 0.5
+ssao_power = 10.9327755
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.3
 volumetric_fog_albedo = Color(1, 0.33111235, 0.30597562, 1)
