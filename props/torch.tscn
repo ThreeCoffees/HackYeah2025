@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://crihsikubvc82"]
+
+[ext_resource type="ArrayMesh" uid="uid://i6xfwraf1lkk" path="res://meshes/torch.obj" id="1_1p4ae"]
+[ext_resource type="Texture2D" uid="uid://b2oprshyrp2c7" path="res://meshes/torch.png" id="2_4kpi6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k62w5"]
+albedo_texture = ExtResource("2_4kpi6")
+texture_filter = 0
+
+[node name="Torch" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_1p4ae")
+surface_material_override/0 = SubResource("StandardMaterial3D_k62w5")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.52120024, 0.10912168)
+light_color = Color(1, 0.4666667, 0, 1)
+light_energy = 3.215
+light_indirect_energy = 1.535
+light_volumetric_fog_energy = 2.945
+light_specular = 16.0
+spot_angle = 103.41
