@@ -13,12 +13,11 @@ texture_filter = 0
 mesh = ExtResource("1_1p4ae")
 surface_material_override/0 = SubResource("StandardMaterial3D_k62w5")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.82120025, 0.10912168)
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.52120024, 0.10912168)
 light_color = Color(1, 0.4666667, 0, 1)
-light_energy = 2.03
-light_indirect_energy = 1.675
-light_volumetric_fog_energy = 0.5
-light_size = 0.05
-shadow_enabled = true
-shadow_bias = 0.03
+light_energy = 3.215
+light_indirect_energy = 1.535
+light_volumetric_fog_energy = 2.945
+light_specular = 16.0
+spot_angle = 103.41
