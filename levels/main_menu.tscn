@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://de20mphuh38lg"]
+[gd_scene load_steps=20 format=3 uid="uid://de20mphuh38lg"]
 
 [ext_resource type="PackedScene" uid="uid://ovbbkmc7s564" path="res://levels/level_2.tscn" id="1_0ettg"]
 [ext_resource type="Texture2D" uid="uid://bc2fe4p2pkbkt" path="res://assets/bars_tiles.png" id="1_nwbki"]
 [ext_resource type="FontFile" uid="uid://cxrrbcifna6m1" path="res://assets/Texturina-Italic-VariableFont_opsz,wght.ttf" id="1_pppj1"]
+[ext_resource type="Script" uid="uid://bgrxekjy2bmc5" path="res://levels/reset_global_state_on_load.gd" id="1_w3h5g"]
 [ext_resource type="Script" uid="uid://c7jykogydtsdt" path="res://ui/menu_button.gd" id="2_6flho"]
 [ext_resource type="Texture2D" uid="uid://c8tl43kj46m0b" path="res://assets/column_tiles.png" id="2_pppj1"]
 [ext_resource type="Texture2D" uid="uid://g2qbljkc80cr" path="res://assets/wall_tiles.png" id="3_6flho"]
@@ -43,6 +44,7 @@ uv1_triplanar = true
 texture_filter = 0
 
 [node name="MainMenu" type="Node3D"]
+script = ExtResource("1_w3h5g")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

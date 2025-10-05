@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dy7dd3ej6xisk"]
+[gd_scene load_steps=13 format=3 uid="uid://dy7dd3ej6xisk"]
 
 [ext_resource type="Script" uid="uid://d1dg4k5icl05o" path="res://activators/global_state_button.gd" id="1_3jct1"]
 [ext_resource type="Script" uid="uid://b5f5uscou4ji4" path="res://activators/global_test_scene_area.gd" id="2_irn3s"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://burrenvof0iow" path="res://meshes/button_body.png" id="3_n0xbs"]
 [ext_resource type="ArrayMesh" uid="uid://cu0sj4xtfqr3c" path="res://meshes/button_face.obj" id="4_n0xbs"]
 [ext_resource type="Texture2D" uid="uid://dlceypu4q6nlu" path="res://meshes/button_face_rain.png" id="5_234sl"]
+[ext_resource type="Script" uid="uid://semy7h83yw4f" path="res://activators/highlight_on_hover.gd" id="7_0dto5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_234sl"]
 albedo_texture = ExtResource("3_n0xbs")
@@ -38,6 +39,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_234sl")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 mesh = ExtResource("4_n0xbs")
 surface_material_override/0 = SubResource("StandardMaterial3D_8tsu8")
+script = ExtResource("7_0dto5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31374097, 0)
@@ -56,3 +58,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06168124, 0.008793712, 0)
 shape = SubResource("CylinderShape3D_3jct1")
 
 [connection signal="clicked" from="Area3D" to="." method="_on_area_3d_clicked"]
+[connection signal="hover_end" from="Area3D" to="ButtonFace" method="end_highlight"]
+[connection signal="hover_start" from="Area3D" to="ButtonFace" method="start_highlight"]
