@@ -2,68 +2,49 @@
 
 [ext_resource type="Script" uid="uid://d1dg4k5icl05o" path="res://activators/global_state_button.gd" id="1_3jct1"]
 [ext_resource type="Script" uid="uid://b5f5uscou4ji4" path="res://activators/global_test_scene_area.gd" id="2_irn3s"]
+[ext_resource type="ArrayMesh" uid="uid://cwnlort30m22q" path="res://meshes/button_body.obj" id="2_uoyjl"]
+[ext_resource type="Texture2D" uid="uid://dqdcha0b6kojd" path="res://meshes/button_face_sun.png" id="3_8tsu8"]
+[ext_resource type="Texture2D" uid="uid://burrenvof0iow" path="res://meshes/button_body.png" id="3_n0xbs"]
+[ext_resource type="ArrayMesh" uid="uid://cu0sj4xtfqr3c" path="res://meshes/button_face.obj" id="4_n0xbs"]
+[ext_resource type="Texture2D" uid="uid://dlceypu4q6nlu" path="res://meshes/button_face_rain.png" id="5_234sl"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_3jct1"]
-bottom_radius = 0.3
-height = 0.7
-radial_segments = 8
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_234sl"]
+albedo_texture = ExtResource("3_n0xbs")
+texture_filter = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irn3s"]
-albedo_color = Color(0.3403393, 0.34033933, 0.3403393, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_mlixj"]
-height = 0.3
-radial_segments = 6
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrwos"]
-albedo_color = Color(0.3328807, 0.33288068, 0.33288068, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tsu8"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("5_234sl")
+texture_filter = 0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0k6do"]
-height = 0.7944336
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_41l80"]
-top_radius = 0.35
-bottom_radius = 0.35
-height = 0.2
-
-[sub_resource type="TextMesh" id="TextMesh_oo0qj"]
-text = "rain"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0gnk"]
-albedo_color = Color(0.23753911, 0.23753914, 0.23753911, 1)
+height = 0.8117676
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3jct1"]
 height = 0.15332031
-radius = 0.38232422
+radius = 0.33007813
 
 [node name="GlobalStateButton" type="Node3D"]
 script = ExtResource("1_3jct1")
+button_face_rain = ExtResource("5_234sl")
+button_face_sun = ExtResource("3_8tsu8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.919417, 0, -0.39328408, 0, 1, 0, 0.39328408, 0, 0.919417, 0, 0.34720945, 0)
-mesh = SubResource("CylinderMesh_3jct1")
-surface_material_override/0 = SubResource("StandardMaterial3D_irn3s")
+[node name="ButtonBody" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("2_uoyjl")
+surface_material_override/0 = SubResource("StandardMaterial3D_234sl")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.9424082, -0.33446488, 0, 0.33446488, 0.9424082, 0, 0, 0, 1, 0, 0.70691943, 0)
-mesh = SubResource("CylinderMesh_mlixj")
-surface_material_override/0 = SubResource("StandardMaterial3D_nrwos")
+[node name="ButtonFace" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("4_n0xbs")
+surface_material_override/0 = SubResource("StandardMaterial3D_8tsu8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31374097, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006620854, 0.6926534, 0.010074019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006620854, 0.7013204, 0.010074019)
 shape = SubResource("CylinderShape3D_0k6do")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.9250706, -0.37979525, 0, 0.37979525, 0.9250706, 0, 0, 0, 1, -0.050670028, 0.828923, 0)
-mesh = SubResource("CylinderMesh_41l80")
-
-[node name="TempTextMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.022692213, 0.8908401, -0.45374992, 0.044495657, 0.454317, 0.8897282, 0.9987518, 0, -0.049947973, -0.080147326, 0.9497359, -0.0176574)
-mesh = SubResource("TextMesh_oo0qj")
-surface_material_override/0 = SubResource("StandardMaterial3D_s0gnk")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(0.91644657, -0.4001571, 0, 0.4001571, 0.91644657, 0, 0, 0, 1, -0.088935554, 0.8968525, 0)
@@ -71,7 +52,7 @@ collision_layer = 7
 script = ExtResource("2_irn3s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.940697e-08, -0.06298828, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06168124, 0.008793712, 0)
 shape = SubResource("CylinderShape3D_3jct1")
 
 [connection signal="clicked" from="Area3D" to="." method="_on_area_3d_clicked"]
