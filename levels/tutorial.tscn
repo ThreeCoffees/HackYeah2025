@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dcujt2ktb63sd"]
+[gd_scene load_steps=15 format=3 uid="uid://dcujt2ktb63sd"]
 
 [ext_resource type="Script" path="res://levels/tutorial.gd" id="1_gdrka"]
 [ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="1_jehdt"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://walls/waterfall.tscn" id="4_0fvvq"]
 [ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://activators/global_state_button.tscn" id="5_0fvvq"]
 [ext_resource type="PackedScene" uid="uid://biv5d65umpjqc" path="res://walls/light_wall.tscn" id="5_aaho8"]
+[ext_resource type="Material" uid="uid://cai0nx5rg0ysy" path="res://materials/wall_tiles.tres" id="6_5h72f"]
 [ext_resource type="Material" path="res://materials/transparent_wall.tres" id="7_c633x"]
 [ext_resource type="PackedScene" uid="uid://oc2bf15m3rfo" path="res://characters/end_level_body.tscn" id="8_d2yhp"]
 [ext_resource type="PackedScene" uid="uid://bc8aagpd2mxau" path="res://ui/PauseMenu.tscn" id="10_bp3yb"]
@@ -72,7 +73,7 @@ size = Vector3(7, 0.5, 6)
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
 
 [node name="Walls" type="CSGCombiner3D" parent="StaticWalls"]
-material_override = ExtResource("1_ok11k")
+material_override = ExtResource("6_5h72f")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticWalls/Walls"]
@@ -100,8 +101,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 1)
 size = Vector3(4, 5, 3)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="StaticWalls/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 7, -11)
-size = Vector3(8, 5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 7.25, -11)
+size = Vector3(8, 4.5, 1)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="StaticWalls/Walls/CSGBox3D5"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4, 0, -2)
