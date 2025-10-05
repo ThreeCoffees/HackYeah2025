@@ -20,8 +20,8 @@ func toggle_end():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 func _input(event):
-	if event is InputEventKey:
-		get_viewport().set_input_as_handled();
+	if Input.is_action_just_pressed("pause") and is_paused:
+		back();
 
 func restart_game():
 	get_tree().reload_current_scene()
