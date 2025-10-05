@@ -1,15 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://dcujt2ktb63sd"]
+[gd_scene load_steps=17 format=3 uid="uid://dcujt2ktb63sd"]
 
 [ext_resource type="Script" path="res://levels/tutorial.gd" id="1_gdrka"]
 [ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="1_jehdt"]
-[ext_resource type="Material" uid="uid://b8v8tarlu0rjq" path="res://materials/floor_tiles.tres" id="1_ok11k"]
+[ext_resource type="Material" path="res://materials/floor_tiles.tres" id="1_ok11k"]
 [ext_resource type="PackedScene" uid="uid://dfwo5idt4idhe" path="res://ui/crosshair.tscn" id="2_jfmsd"]
 [ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="2_ok11k"]
 [ext_resource type="PackedScene" uid="uid://bto115mhdyubd" path="res://characters/flying_character.tscn" id="3_rbh7r"]
 [ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://walls/waterfall.tscn" id="4_0fvvq"]
 [ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://activators/global_state_button.tscn" id="5_0fvvq"]
 [ext_resource type="PackedScene" uid="uid://biv5d65umpjqc" path="res://walls/light_wall.tscn" id="5_aaho8"]
-[ext_resource type="Material" uid="uid://b6tga0lbp3h6r" path="res://materials/transparent_wall.tres" id="7_c633x"]
+[ext_resource type="Material" uid="uid://cai0nx5rg0ysy" path="res://materials/wall_tiles.tres" id="6_5h72f"]
+[ext_resource type="Material" path="res://materials/transparent_wall.tres" id="7_c633x"]
 [ext_resource type="PackedScene" uid="uid://oc2bf15m3rfo" path="res://characters/end_level_body.tscn" id="8_d2yhp"]
 [ext_resource type="PackedScene" uid="uid://bc8aagpd2mxau" path="res://ui/PauseMenu.tscn" id="10_bp3yb"]
 [ext_resource type="PackedScene" uid="uid://defrlu2sytjq1" path="res://ui/level_complete.tscn" id="13_5h72f"]
@@ -51,8 +52,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -6.5)
 size = Vector3(17, 1, 20)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="StaticWalls/Floors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4.75, -10)
-size = Vector3(8, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4.75, -9.5)
+size = Vector3(8, 0.5, 2)
 
 [node name="CSGBox3D20" type="CSGBox3D" parent="StaticWalls/Floors"]
 transform = Transform3D(1, 0, 0, 0, 0.9238795, -0.38268346, 0, 0.38268346, 0.9238795, 8, 2, -1)
@@ -70,12 +71,12 @@ size = Vector3(7, 0.5, 6)
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
 
 [node name="Walls" type="CSGCombiner3D" parent="StaticWalls"]
-material_override = ExtResource("1_ok11k")
+material_override = ExtResource("6_5h72f")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticWalls/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -9)
-size = Vector3(3, 5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, -9)
+size = Vector3(3, 4.5, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="StaticWalls/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4, 3)
@@ -90,8 +91,8 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.9
 size = Vector3(15, 11, 1)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="StaticWalls/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 2.5, -9)
-size = Vector3(2, 5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 2.25, -9)
+size = Vector3(2, 4.5, 1)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="StaticWalls/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 1)
@@ -153,9 +154,6 @@ size = Vector3(2, 4, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 2.5, -5)
 size = Vector3(2, 4, 1)
 
-[node name="EndLevelBody" parent="StaticWalls/Walls" instance=ExtResource("8_d2yhp")]
-transform = Transform3D(0.70710677, -0.49999997, -0.49999997, 0.70710677, 0.49999997, 0.49999997, 0, -0.70710677, 0.70710677, 9, 5.75, -8)
-
 [node name="CSGBox3D19" type="CSGBox3D" parent="StaticWalls/Walls"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.75, 7, -10.375)
 size = Vector3(0.75, 5, 5)
@@ -163,6 +161,9 @@ size = Vector3(0.75, 5, 5)
 [node name="CSGBox3D20" type="CSGBox3D" parent="StaticWalls/Walls"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.75, 7, -6.125)
 size = Vector3(0.75, 5, 3)
+
+[node name="EndLevelBody" parent="." instance=ExtResource("8_d2yhp")]
+transform = Transform3D(0.70710677, -0.49999997, -0.49999997, 0.70710677, 0.49999997, 0.49999997, 0, -0.70710677, 0.70710677, 9, 5.75, -8)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.25881886, 0.6830129, -0.6830126, -1.4393432e-08, 0.70710665, 0.70710695, 0.9659259, 0.18301263, -0.18301252, 0, 0, 0)
@@ -222,4 +223,4 @@ transform = Transform3D(-2.6747527, -1.3585647, -3.4449172e-07, 4.5298754e-07, -
 [node name="ExitArrowLabel" parent="." instance=ExtResource("15_qvtyd")]
 transform = Transform3D(-3, 0, -4.5298745e-07, 4.5298748e-07, -1.3113416e-07, -3, -1.980071e-14, -3, 1.3113416e-07, 9.920079, 4.2097054, -7.9836307)
 
-[connection signal="end_level" from="StaticWalls/Walls/EndLevelBody" to="LevelComplete" method="_on_end_level"]
+[connection signal="end_level" from="EndLevelBody" to="LevelComplete" method="_on_end_level"]
