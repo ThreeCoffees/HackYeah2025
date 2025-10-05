@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://defrlu2sytjq1"]
+
+[ext_resource type="Script" uid="uid://peh8ji6868sq" path="res://ui/level_complete.gd" id="1_f8e0v"]
+[ext_resource type="FontFile" uid="uid://cxrrbcifna6m1" path="res://assets/Texturina-Italic-VariableFont_opsz,wght.ttf" id="1_jq5il"]
+[ext_resource type="Script" uid="uid://wockr5qc1wdb" path="res://ui/pause_menu_button.gd" id="2_f8e0v"]
+
+[node name="LevelComplete" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f8e0v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.654902)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_jq5il")
+theme_override_font_sizes/normal_font_size = 75
+text = "Level complete"
+fit_content = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Restart" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_jq5il")
+theme_override_font_sizes/normal_font_size = 40
+text = "Restart"
+fit_content = true
+script = ExtResource("2_f8e0v")
+
+[node name="MainMenu" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_jq5il")
+theme_override_font_sizes/normal_font_size = 40
+text = "To main menu"
+fit_content = true
+script = ExtResource("2_f8e0v")
+
+[connection signal="clicked" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer2/Restart" to="." method="restart_game"]
+[connection signal="clicked" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer2/MainMenu" to="." method="back"]
