@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcujt2ktb63sd"]
+[gd_scene load_steps=12 format=3 uid="uid://dcujt2ktb63sd"]
 
-[ext_resource type="Script" uid="uid://bnoytgpawbjj0" path="res://levels/tutorial.gd" id="1_gdrka"]
+[ext_resource type="Script" path="res://levels/tutorial.gd" id="1_gdrka"]
 [ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="1_jehdt"]
 [ext_resource type="Material" uid="uid://b8v8tarlu0rjq" path="res://materials/floor_tiles.tres" id="1_ok11k"]
+[ext_resource type="PackedScene" uid="uid://dfwo5idt4idhe" path="res://ui/crosshair.tscn" id="2_jfmsd"]
 [ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="2_ok11k"]
 [ext_resource type="PackedScene" uid="uid://bto115mhdyubd" path="res://characters/flying_character.tscn" id="3_rbh7r"]
 [ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://walls/waterfall.tscn" id="4_0fvvq"]
@@ -13,6 +14,8 @@
 
 [node name="Tutorial" type="Node3D"]
 script = ExtResource("1_gdrka")
+
+[node name="Crosshair" parent="." instance=ExtResource("2_jfmsd")]
 
 [node name="PlayableCharacters" type="Node3D" parent="."]
 

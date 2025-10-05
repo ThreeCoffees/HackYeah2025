@@ -44,7 +44,6 @@ func transfer_camera(new_parent: PlayableCharacter):
 func _process(_delta: float):
 	
 	var new_hover = picking_ray.get_collider();
-	print(new_hover)
 	if new_hover != hovering_over:
 		if new_hover != null and new_hover.has_method("_on_crosshair_hover"):
 			new_hover._on_crosshair_hover();

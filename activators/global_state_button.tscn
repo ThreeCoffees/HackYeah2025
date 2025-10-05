@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://burrenvof0iow" path="res://meshes/button_body.png" id="3_n0xbs"]
 [ext_resource type="ArrayMesh" uid="uid://cu0sj4xtfqr3c" path="res://meshes/button_face.obj" id="4_n0xbs"]
 [ext_resource type="Texture2D" uid="uid://dlceypu4q6nlu" path="res://meshes/button_face_rain.png" id="5_234sl"]
-[ext_resource type="Script" uid="uid://semy7h83yw4f" path="res://activators/highlight_on_hover.gd" id="7_0dto5"]
+[ext_resource type="Script" uid="uid://semy7h83yw4f" path="res://activators/highlight_obj_on_hover.gd" id="7_0dto5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_234sl"]
 albedo_texture = ExtResource("3_n0xbs")
