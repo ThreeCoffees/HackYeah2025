@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://oc2bf15m3rfo"]
+
+[ext_resource type="PackedScene" uid="uid://b4xmcokbmqma" path="res://characters/playable_character.tscn" id="1_p3t7d"]
+[ext_resource type="PackedScene" uid="uid://cvdjg4iwsyuc3" path="res://meshes/Heart.glb" id="2_cu7fx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ev3yo"]
+radius = 0.882
+
+[node name="EndLevelBody" instance=ExtResource("1_p3t7d")]
+
+[node name="CameraOffset" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("SphereShape3D_ev3yo")
+
+[node name="Heart" parent="." index="2" instance=ExtResource("2_cu7fx")]
