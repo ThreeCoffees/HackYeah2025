@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c7jykogydtsdt" path="res://ui/menu_button.gd" id="2_6flho"]
 [ext_resource type="Texture2D" uid="uid://c8tl43kj46m0b" path="res://assets/column_tiles.png" id="2_pppj1"]
 [ext_resource type="Texture2D" uid="uid://g2qbljkc80cr" path="res://assets/wall_tiles.png" id="3_6flho"]
+[ext_resource type="PackedScene" uid="uid://dcujt2ktb63sd" path="res://levels/tutorial.tscn" id="3_7ty7c"]
 [ext_resource type="Texture2D" uid="uid://dvsjoo503gl0f" path="res://assets/floor_tiles.png" id="4_ofye2"]
 [ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="5_7ty7c"]
 [ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://activators/global_state_button.tscn" id="6_nwbki"]
@@ -92,16 +93,17 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_pppj1")
 theme_override_font_sizes/normal_font_size = 40
-text = "Tutoral
+text = "Tutorial
 "
 fit_content = true
 script = ExtResource("2_6flho")
+level_scene = ExtResource("3_7ty7c")
 
 [node name="Level1" type="RichTextLabel" parent="UI/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_pppj1")
 theme_override_font_sizes/normal_font_size = 40
-text = "Level1
+text = "Level1 [ N/A ]
 "
 fit_content = true
 script = ExtResource("2_6flho")
