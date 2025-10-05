@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dwilk1ike3iry" path="res://characters/walking_character_small.tscn" id="7_ep78u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilhis"]
-transparency = 4
+transparency = 2
+alpha_scissor_threshold = 0.009
+alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("5_vm7no")
 uv1_triplanar = true
