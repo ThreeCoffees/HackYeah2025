@@ -28,6 +28,12 @@ func _unhandled_input(event):
 		rotation.x = clampf(rotation.x, -deg_to_rad(70), deg_to_rad(70));
 		
 func transfer_camera(new_parent: PlayableCharacter):
+	var parent = get_parent();
+	parent.input_dir = Vector2();
+	parent.input_vertical = 0.0;
+	parent.velocity = Vector3();
+	parent.visible = true;
+	
 	reparent(new_parent, true);
 	input_locked = true;
 	

@@ -2,22 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://b4xmcokbmqma" path="res://characters/playable_character.tscn" id="1_oiig4"]
 [ext_resource type="Script" uid="uid://yrrwjkv6vvx4" path="res://characters/walking_character.gd" id="2_pq123"]
+[ext_resource type="PackedScene" uid="uid://cu5neu7xmoq3o" path="res://meshes/TallThinGuy.glb" id="3_rrvj8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8008b"]
-radius = 0.3
-height = 1.8
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_rrvj8"]
 radius = 0.3
 height = 1.8
 
 [node name="WalkingCharacter" instance=ExtResource("1_oiig4")]
 script = ExtResource("2_pq123")
 
+[node name="CameraOffset" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.397334, -0.20972437)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_8008b")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_rrvj8")
+[node name="TallThinGuy" parent="." index="2" instance=ExtResource("3_rrvj8")]
+transform = Transform3D(-4.0826436e-08, 0, 0.9339999, 0, 0.9339999, 0, -0.9339999, 0, -4.0826436e-08, 0, 0, 0)

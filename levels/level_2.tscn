@@ -1,5 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://ovbbkmc7s564"]
 
+[ext_resource type="PackedScene" uid="uid://bc8aagpd2mxau" path="res://ui/PauseMenu.tscn" id="1_hbb88"]
 [ext_resource type="PackedScene" uid="uid://bto115mhdyubd" path="res://characters/flying_character.tscn" id="1_ilhis"]
 [ext_resource type="Texture2D" uid="uid://c8tl43kj46m0b" path="res://assets/column_tiles.png" id="2_dfjjl"]
 [ext_resource type="PackedScene" uid="uid://8w63g3fanpur" path="res://walls/waterfall.tscn" id="3_5722l"]
@@ -26,10 +27,12 @@ texture_filter = 0
 
 [node name="Level2" type="Node3D"]
 
+[node name="PauseMenu" parent="." instance=ExtResource("1_hbb88")]
+
 [node name="Characters" type="Node3D" parent="."]
 
 [node name="FlyingCharacter" parent="Characters" instance=ExtResource("1_ilhis")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 4, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4, -4)
 
 [node name="WalkingCharacter" parent="Characters" instance=ExtResource("5_ep78u")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.75, 0)
@@ -78,7 +81,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 10.75, -3.125)
 size = Vector3(12, 0.5, 18.75)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="TransparentWalls_CSG"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -1.375, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1.375, -11.5)
 size = Vector3(1, 0.25, 2)
 
 [node name="CSGBox3D29" type="CSGBox3D" parent="TransparentWalls_CSG"]
