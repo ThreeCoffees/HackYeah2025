@@ -202,7 +202,7 @@ spot_range = 17.527
 spot_angle = 31.84
 
 [node name="GlobalStateButton3" parent="." instance=ExtResource("5_fenjg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5784683, 0, 4.6077747)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5784683, 0, 5.361054)
 
 [node name="GlobalStateButton4" parent="." instance=ExtResource("5_fenjg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5784683, 0, 3.5735357)
