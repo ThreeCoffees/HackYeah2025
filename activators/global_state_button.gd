@@ -23,4 +23,6 @@ func _process(delta: float) -> void:
 	$ButtonFace.position = (3*t*t - 2*t*t*t) * Vector3(0.04, -0.04, 0)
 
 func _on_area_3d_clicked() -> void:
+	if GlobalStateManager.current != property:
+		AudioManager.play("flick")
 	GlobalStateManager.set_property(property)
