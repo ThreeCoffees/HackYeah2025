@@ -77,10 +77,6 @@ collision_mask = 0
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.75, 2.25, -0.25)
 size = Vector3(3.5, 0.5, 7)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="TransparentWalls_CSG"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.25)
-size = Vector3(3.5, 0.5, 4.5)
-
 [node name="CSGBox3D8" type="CSGBox3D" parent="TransparentWalls_CSG"]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 1.75, 2.25, -0.25)
 size = Vector3(3.5, 0.5, 7)
@@ -290,6 +286,10 @@ size = Vector3(2, 0.5, 6)
 [node name="WalkingCharacter" parent="StaticWalls/Floors" instance=ExtResource("5_ep78u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 10.25, 2.5)
 
+[node name="CSGBox3D6" type="CSGBox3D" parent="StaticWalls/Floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.75, 6.625)
+size = Vector3(3.5, 0.5, 5.25)
+
 [node name="Waterfalls" type="Node3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
@@ -375,6 +375,9 @@ transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0,
 transform = Transform3D(3, 2.6226832e-07, 4.5298748e-07, 2.6226832e-07, -3, 3.9601423e-14, 4.5298748e-07, 0, -3, 0, 4, 3.7)
 
 [node name="EndLevelBody" parent="." instance=ExtResource("17_uo0vl")]
-transform = Transform3D(0.68599993, 0.5940934, -1.029, -1.1881868, 0.34299994, -0.5940934, 0, 1.1881868, 0.6859999, 0, 1.75, 9)
+transform = Transform3D(0.68599993, 0.5940934, -1.029, -1.1881868, 0.34299994, -0.5940934, 0, 1.1881868, 0.6859999, 0, 1.75, 7.5)
+
+[node name="ExitArrowLabel2" parent="." instance=ExtResource("15_0ourt")]
+transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, -0.25, 7.25, 10.725)
 
 [connection signal="end_level" from="EndLevelBody" to="LevelComplete" method="_on_end_level"]
