@@ -4,7 +4,7 @@ signal pressed
 
 const MIN_WAIT = 1000
 var last_clicked: float = 0;
-const minimum_distance = 1.5;
+const minimum_distance = 3;
 
 func retrigger_pressed():
 	pressed.emit()
