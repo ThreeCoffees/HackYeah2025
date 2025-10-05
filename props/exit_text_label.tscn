@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1i61tf6odqmq"]
+
+[ext_resource type="Texture2D" uid="uid://bjuau1afq2l6l" path="res://assets/exit_text.png" id="1_qpw4v"]
+
+[node name="ExitTextLabel" type="Sprite3D"]
+transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("1_qpw4v")
