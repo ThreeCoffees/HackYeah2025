@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjme3kxs8g1gt"]
+[gd_scene load_steps=15 format=3 uid="uid://cjme3kxs8g1gt"]
 
 [ext_resource type="PackedScene" uid="uid://ovbbkmc7s564" path="res://levels/level_2.tscn" id="1_0ettg"]
 [ext_resource type="Texture2D" uid="uid://bc2fe4p2pkbkt" path="res://assets/bars_tiles.png" id="1_nwbki"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dvsjoo503gl0f" path="res://assets/floor_tiles.png" id="4_ofye2"]
 [ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="5_7ty7c"]
 [ext_resource type="PackedScene" uid="uid://dy7dd3ej6xisk" path="res://activators/global_state_button.tscn" id="6_nwbki"]
+[ext_resource type="PackedScene" uid="uid://cu5neu7xmoq3o" path="res://meshes/TallThinGuy.glb" id="10_7ty7c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8wrl"]
 render_priority = 3
@@ -356,3 +357,6 @@ property = "sun"
 
 [node name="GlobalStateButton2" parent="." instance=ExtResource("6_nwbki")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0.73788023, 3)
+
+[node name="TallThinGuy" parent="." instance=ExtResource("10_7ty7c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.6282604, 3)
