@@ -1,26 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8bq1fncgd3gn"]
+[gd_scene load_steps=7 format=3 uid="uid://b8bq1fncgd3gn"]
 
 [ext_resource type="PackedScene" uid="uid://dsqmdc5xdd8ke" path="res://walls/static_wall.tscn" id="1_txxle"]
 [ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="2_pv81j"]
 [ext_resource type="PackedScene" uid="uid://bto115mhdyubd" path="res://characters/flying_character.tscn" id="3_uagcx"]
 [ext_resource type="PackedScene" uid="uid://dwilk1ike3iry" path="res://characters/walking_character_small.tscn" id="4_nl7uf"]
 [ext_resource type="PackedScene" uid="uid://diiwa5d43dean" path="res://characters/walking_character.tscn" id="5_txxle"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_rw8bm"]
-size = Vector3(20, 1, 20)
-
-[sub_resource type="BoxMesh" id="BoxMesh_moyko"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nl7uf"]
-albedo_color = Color(1, 0.3647059, 0.38039216, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_txxle"]
-size = Vector3(20, 0.8, 20)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txxle"]
-transparency = 1
-albedo_color = Color(1, 1, 1, 0.2627451)
-emission = Color(1, 1, 1, 1)
+[ext_resource type="PackedScene" uid="uid://ba3neuqi16s8s" path="res://walls/transparent_wall.tscn" id="6_56dha"]
 
 [node name="leon_test_scene" type="Node3D"]
 
@@ -48,38 +33,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6304364, -0.52670693)
 [node name="WalkingCharacter2" parent="." instance=ExtResource("5_txxle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7881638, 0.008633852, -2.5161672)
 
-[node name="transparentwall" type="StaticBody3D" parent="."]
+[node name="TransparentWall" parent="." instance=ExtResource("6_56dha")]
 transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 4.692146, 5.4899406, -1.5187786)
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="transparentwall"]
-shape = SubResource("BoxShape3D_rw8bm")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="transparentwall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -4.7683716e-07, -10)
-mesh = SubResource("BoxMesh_moyko")
-surface_material_override/0 = SubResource("StandardMaterial3D_nl7uf")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="transparentwall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.000001, -2.3841858e-07, -10)
-mesh = SubResource("BoxMesh_moyko")
-skeleton = NodePath("../MeshInstance3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_nl7uf")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="transparentwall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.000001, 9.536743e-07, 10)
-mesh = SubResource("BoxMesh_moyko")
-skeleton = NodePath("../MeshInstance3D2")
-surface_material_override/0 = SubResource("StandardMaterial3D_nl7uf")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="transparentwall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.999999, 9.536743e-07, 10)
-mesh = SubResource("BoxMesh_moyko")
-skeleton = NodePath("../MeshInstance3D3")
-surface_material_override/0 = SubResource("StandardMaterial3D_nl7uf")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="transparentwall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11532402, -0.021795273, -0.037878036)
-mesh = SubResource("BoxMesh_txxle")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_txxle")
