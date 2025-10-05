@@ -3,7 +3,7 @@ extends Area3D
 signal clicked
 signal hover_start
 signal hover_end
-const minimum_distance = 1.5;
+const minimum_distance = 3;
 
 
 func _on_pick_input(emitter_position):
