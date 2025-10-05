@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dsbnm1yue8ama" path="res://player/player_camera.tscn" id="6_ilhis"]
 [ext_resource type="PackedScene" uid="uid://dwilk1ike3iry" path="res://characters/walking_character_small.tscn" id="7_ep78u"]
 [ext_resource type="PackedScene" uid="uid://crihsikubvc82" path="res://props/torch.tscn" id="13_wcjpl"]
-[ext_resource type="PackedScene" uid="uid://d1i61tf6odqmq" path="res://props/exit_text_label.tscn" id="14_5orea"]
-[ext_resource type="PackedScene" uid="uid://ddj251yfwjrod" path="res://levels/exit_arrow_label.tscn" id="15_0ourt"]
+[ext_resource type="PackedScene" path="res://props/exit_text_label.tscn" id="14_5orea"]
+[ext_resource type="PackedScene" uid="uid://ddj251yfwjrod" path="res://props/exit_arrow_label.tscn" id="15_0ourt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilhis"]
 transparency = 2
