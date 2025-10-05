@@ -107,12 +107,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, -13)
 size = Vector3(1, 4, 1)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="StaticWalls/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, -16)
-size = Vector3(1, 5, 1)
-
-[node name="CSGBox3D15" type="CSGBox3D" parent="StaticWalls/Walls/CSGBox3D15"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 4)
-size = Vector3(1, 5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, -14)
+size = Vector3(1, 5, 5)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="StaticWalls/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, -15)
